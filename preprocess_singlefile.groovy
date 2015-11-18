@@ -10,10 +10,12 @@ if(args.size() >= 1){
 			def p = ~/(\d{4})(\d{2})(\d{2})/
 			file.eachLine(0, { line, lineNumber ->
 				if(lineNumber >= firstLine){
-					line = line.replaceAll(/\s/, '').trim()
-					writer.println(line.replaceAll(p){ all, year, month, day->
-						"${year}-${month}-${day}"
-					})
+					if(line.getBytes()[0] != 26){
+						line = line.replaceAll(/\s/, '').trim()
+						writer.println(line.replaceAll(p){ all, year, month, day->
+							"${year}-${month}-${day}"
+						})
+					}
 				}
 			})
 			firstLine = 1

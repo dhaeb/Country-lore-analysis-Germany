@@ -7,10 +7,12 @@ if(args.size() >= 1){
 		def p = ~/(\d{4})(\d{2})(\d{2})/
 		outFile.withPrintWriter { writer -> 
 		  	file.eachLine { line ->
-				line = line.replaceAll(/\s/, '')
-				writer.println(line.replaceAll(p){ all, year, month, day->
-    					"${year}-${month}-${day}"
-				})
+		  		if(!line.isEmpty()){
+					line = line.replaceAll(/\s/, '')
+					writer.println(line.replaceAll(p){ all, year, month, day->
+						"${year}-${month}-${day}"
+					})
+				}
 			}
 		}
 	}
