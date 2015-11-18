@@ -2,25 +2,39 @@ klSchema <- structType(
   structField("STATIONS_ID", "integer"),
   structField("MESS_DATUM", "date"),
   structField("QUALITAETS_NIVEAU", "double"),
-    structField("LUFTTEMPERATUR", "double"),
-   structField("DAMPFDRUCK", "double"),
-   structField("BEDECKUNGSGRAD", "double"),
-   structField("LUFTDRUCK_STATIONSHOEHE", "double"),
-   structField("REL_FEUCHTE", "double"),
-    structField("WINDGESCHWINDIGKEIT", "double"),
-    structField("LUFTTEMPERATUR_MAXIMUM", "double"),
-   structField("LUFTTEMPERATUR_MINIMUM", "double"),
-   structField("LUFTTEMP_AM_ERDB_MINIMUM", "double"),
-    structField("WINDSPITZE_MAXIMUM", "double"),
-    structField("NIEDERSCHLAGSHOEHE", "double"),
-   structField("NIEDERSCHLAGSHOEHE_IND", "double"),
-   structField("SONNENSCHEINDAUER", "double"),
+  structField("LUFTTEMPERATUR", "double"),
+  structField("DAMPFDRUCK", "double"),
+  structField("BEDECKUNGSGRAD", "double"),
+  structField("LUFTDRUCK_STATIONSHOEHE", "double"),
+  structField("REL_FEUCHTE", "double"),
+  structField("WINDGESCHWINDIGKEIT", "double"),
+  structField("LUFTTEMPERATUR_MAXIMUM", "double"),
+  structField("LUFTTEMPERATUR_MINIMUM", "double"),
+  structField("LUFTTEMP_AM_ERDB_MINIMUM", "double"),
+  structField("WINDSPITZE_MAXIMUM", "double"),
+  structField("NIEDERSCHLAGSHOEHE", "double"),
+  structField("NIEDERSCHLAGSHOEHE_IND", "double"),
+  structField("SONNENSCHEINDAUER", "double"),
   structField("SCHNEEHOEHE", "double")
 )
 
-#/home/dhaeb/dvl/data/dwd/kl/tageswerte_00001_19370101_19860630_hist/produkt_klima_Tageswerte_19370101_19860630_00001_ndf.txt
+metaSchema <- structType(
+  structField("STATIONS_ID", "integer"),
+  structField("von_datum", "string"),
+  structField("bis_datum", "string"),
+  structField("Statationshoehe", "double"),
+  structField("longitude", "double"),
+  structField("latitude", "double"),
+  structField("Stationsname", "string"),
+  structField("Bundesland", "string"),
+  structField("Lage", "string")
+)
 
-#"/home/dhaeb/dvl/data/dwd/kl/kl_total.csv"
+metaDf <- read.df(sqlContext,
+                  "/home/dhaeb/dvl/data/dwd/kl/KL_Tageswerte_Beschreibung_Stationen4.txt",
+                  "com.databricks.spark.csv", 
+                  metaSchema, 
+                  header="true", delimiter = "\t")
 
 mySt <- read.df(sqlContext,
               #"/home/dhaeb/dvl/data/dwd/kl/kl_total.csv",
@@ -28,6 +42,8 @@ mySt <- read.df(sqlContext,
               "com.databricks.spark.csv", 
               klSchema, 
               header="true", delimiter = ";")
+
+joinedDf <- join(metaDf, mySt, metaDf$STATIONS_ID == mySt$STATIONS_ID)
 
 mySt$MONTH <- month(mySt$MESS_DATUM)
 mySt$YEAR <- year(mySt$MESS_DATUM)
