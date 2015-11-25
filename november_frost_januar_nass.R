@@ -18,6 +18,41 @@ klSchema <- structType(
   structField("SCHNEEHOEHE", "double")
 )
 
+morePrecipSchema <- structType(
+  structField("STATIONS_ID", "integer"),
+  structField("MESS_DATUM", "date"),
+  structField("QUALITAETS_NIVEAU", "double"),
+  structField("NIEDERSCHLAGSHOEHE","double"),
+  structField("NIEDERSCHLAGSHOEHE_IND","double"),
+  structField("SCHNEEHOEHE","double")
+)
+
+solarSchema <- structType(
+  structField("STATIONS_ID", "integer"),
+  structField("MESS_DATUM", "date"),
+  structField("QUALITAETS_NIVEAU", "double"),
+  structField("SONNENSCHEINDAUER","double"),
+  structField("GLOBAL_KW_J", "double"),
+  structField("DIFFUS_HIMMEL_KW_J", "double"),
+  structField("ATMOSPHAERE_LW_J", "double")
+)
+
+soilSchema <- structType(
+  structField("STATIONS_ID", "integer"),
+  structField("MESS_DATUM", "date"),
+  structField("QUALITAETS_NIVEAU", "double"),
+  structField("ERDBODENTEMPERATUR", "double"),
+  structField("MESS_TIEFE", "double"),
+  structField("ERDBODENTEMPERATUR", "double"),
+  structField("MESS_TIEFE", "double"),
+  structField("ERDBODENTEMPERATUR", "double"),
+  structField("MESS_TIEFE", "double"), 
+  structField("ERDBODENTEMPERATUR", "double"),
+  structField("MESS_TIEFE", "double"),
+  structField("ERDBODENTEMPERATUR", "double"),
+  structField("MESS_TIEFE", "double")
+)
+
 metaSchema <- structType(
   structField("STATIONS_ID", "integer"),
   structField("von_datum", "string"),
