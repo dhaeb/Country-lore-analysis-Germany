@@ -78,22 +78,28 @@ cache(jointedDataYear)
 
 joinedData <- join(jointedDataYear, joinedDataFeb, jointedDataYear$YEAR == joinedDataFeb$YEAR_FEB & jointedDataYear$STATIONS_ID == joinedDataFeb$SID)
 
-overMean <- where(joinedData, joinedData$"(sumNiedPerYear > totalNiedMean)" == TRUE & joinedData$"(sumNiedFeb > totalNiedMeanFeb)")
+overMean <- where(joinedData, joinedData$"(sumNiedPerYear > totalNiedMean)" & joinedData$"(sumNiedFeb > totalNiedMeanFeb)")
 
 cache(joinedData)
 
 cAll <- agg(group_by(joinedData, joinedData$STATIONS_ID), cAll = n(joinedData$YEAR))
-cOverMean <- agg(group_by(overMean, overMean$SID), cOverMean = n(joinedData$YEAR))
+cOverMean <- agg(group_by(overMean, overMean$SID), cOverMean = n(overMean$YEAR))
 
+cache(cAll)
+cache(cOverMean)
+
+a <- count(overMean)
+b <- count(joinedData)
+meanAll <-   a / b
 
 cFinal <- join(cAll, cOverMean, cAll$STATIONS_ID == cOverMean$SID)
+cFinal <- select(cFinal, cFinal$STATIONS_ID, cFinal$cAll, cFinal$cOverMean, cFinal$cOverMean / cFinal$cAll)
 cFinal <- join(cFinal, metaDf, cFinal$STATIONS_ID == metaDf$STATIONS_ID)
-#cFinal <- select(cFinal, cFinal$cAll, cFinal$cOverMean, cFinal$cOverMean / cFinal$cAll)
 cFinal <- arrange(cFinal, desc(cFinal$"(cOverMean / cAll)"))
 cache(cFinal)
 # & totalNiedInFeb$YEAR_FEB == totalNiedPerYear$YEAR
 #join(totalNiedInFebMean, totalNiedMean, totalNiedInFebMean$STATIONS_ID == totalNiedMean$STATIONS_ID)
-exportCsv <- select(cFinal, cFinal$cOverMean, alias(cFinal$"(cOverMean / cAll)", "Verhältnis"), cFinal$longitude, cFinal$latitude, cFinal$Stationsname, cFinal$Bundesland, cFinal$Lage)
-write.df(exportCsv, "wette.csv", "com.databricks.spark.csv", "overwrite")
+exportCsv <- select(cFinal, cFinal$cAll, cFinal$cOverMean, alias(cFinal$"(cOverMean / cAll)", "Verhältnis"), cFinal$longitude, cFinal$latitude, cFinal$Stationsname, cFinal$Bundesland, cFinal$Lage)
+write.df(exportCsv, "wetter.csv", "com.databricks.spark.csv", "overwrite")
 #precipMetaJoinedDf <- join(metaDf, morePrecipDf, metaDf$STATIONS_ID == morePrecipDf$STATIONS_ID)
 #head(totalNiedInFeb)
