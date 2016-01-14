@@ -81,7 +81,7 @@
     <script src="http://openlayers.org/en/v3.11.2/build/ol.js" type="text/javascript"></script>
     <script type="text/javascript">
     
-    var pointVector;
+    var pointVector, filterObj = [];
     
     (function($){
     	$.event.special.destroyed = {
@@ -135,6 +135,7 @@
         });
         
         var invisble = new ol.style.Style({
+		name : "invisible",
         	image: new ol.style.Circle({
                         radius: 0,
                         fill: new ol.style.Fill({
@@ -156,6 +157,7 @@
         
         function createPointStyle(color, radius){
             return new ol.style.Style({
+		name : "default",
         	image: new ol.style.Circle({
                         radius: radius,
                         fill: new ol.style.Fill({
@@ -184,12 +186,23 @@
 			  url : 'file:///home/dhaeb/dvl/R/Country-lore-analysis-Germany/febjahr_geo.json',
 			  format: new ol.format.GeoJSON()
         });
+
+	var sliderLowerDate = "sliderLowerDate",
+	    sliderCount   = "sliderCount",
+	    sliderHeight = "sliderHeight",
+	    sliderHigherDate = "sliderHigherDate";
         
     	pointVector.on("addfeature", function(vectorevent){
-		//console.log(vectorevent.feature);
-		
-		//vectorevent.Qh = false;
-		
+		// erstelle Filterobjekt für alle Filter, dies es geben soll!
+		filterObj.push({
+			sliderHeight : false,
+			sliderCount : false,
+			sliderLowerDate : false,
+			sliderHeigherDate : false,
+			isFilteredOut : function() {return this.sliderHeight | this.sliderCount | this.sliderLowerDate | this.sliderHigherDate;}
+		});
+		vectorevent.feature.B.von = new Date(vectorevent.feature.B.von);
+		vectorevent.feature.B.bis = new Date(vectorevent.feature.B.bis); 		
 	});      
 	
 	var attribution = new ol.control.Attribution({
@@ -258,6 +271,7 @@
 	      		+ "<tr><td>Verhaeltnis: </td><td>" + feature.get('rel') + "</td></tr>"
 	      		+ "<tr><td>Lage: </td><td>" + feature.get('Lage') + "</td></tr>"
 	      		+ "<tr><td>Hoehe: </td><td>" + feature.get('Hoehe') + "</td></tr>"
+	      		+ "<tr><td>Von-Bis: </td><td>" + feature.get('von').getFullYear() + "-" + feature.get('bis').getFullYear() + "</td></tr>"
 	      		+ "</table>";
 	};
 	
@@ -275,17 +289,38 @@
 		content.innerHTML = createPopover(feature);
 	  } 
 	});
-	var sliderLowerDate = "sliderLowerDate",
-	    sliderCount   = "sliderCount",
-	    sliderHeight = "sliderHeight",
-	    sliderHeigherDate = "sliderHeigherDate";
 	    
-	 $.each([sliderHeight, sliderCount, sliderLowerDate, sliderHeigherDate], function(i, id){
+	 $.each([sliderHeight, sliderCount, sliderLowerDate, sliderHigherDate], function(i, id){
 	 	var idCssSelector = "#" + id;
-	 	console.log(idCssSelector);
-	 	$(idCssSelector).on("change", function(i){
-	 		console.log(i.target.id);
-	 		console.log(i);
+	 	$(idCssSelector).on("change", function(chngEvt){
+			//console.log("test");
+			function ltCompareFloats(comparable, parseable) {
+				return comparable < parseFloat(parseable);
+			};
+
+			$.each(pointVector.getFeatures(),  function(i, e){ 
+			    var filter = filterObj[i];
+			    function checkFor(comparable, filterName, compareFunc){
+				  var result = false;
+				  if(chngEvt.target.id == filterName){
+					if(compareFunc(comparable, chngEvt.target.value)){
+						console.log(e.B.Ort, e.B.von);
+						result = true;
+						e.setStyle(invisble);
+		                        } 
+					filter[chngEvt.target.id] = result;
+				  } 
+				  return result;
+		            };
+			    checkFor(e.B.Hoehe, sliderHeight, ltCompareFloats) || checkFor(e.B.cAll, sliderCount, ltCompareFloats) || checkFor(e.B.von, sliderLowerDate, function(a,b){return a < new Date(parseInt(b), 0, 1);}) || checkFor(e.B.bis, sliderHigherDate, function(a,b){return a > new Date(parseInt(b), 0, 1);})
+
+			    if(!filter.isFilteredOut()) {
+				e.setStyle(styleFunction(e));
+			    } 
+				
+			});
+	 		//console.log(chngEvt.target.id);
+	 		//console.log(chngEvt);
 	 	});	
 	 });
       });
