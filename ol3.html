@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="http://openlayers.org/en/v3.11.2/css/ol.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style>
       .map {
@@ -29,11 +32,118 @@
 	  width:600px;
        }
        #popup {
-       	  padding-bottom: 45px;
+       	  padding-bottom: 15px;
        }
+       
+       .ol-popup {
+	  position: absolute;
+	  background-color: white;
+	  -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+	  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+	  padding: 15px;
+	  border-radius: 10px;
+	  border: 1px solid #cccccc;
+	  bottom: 12px;
+	  left: -50px;
+	  min-width: 280px;
+	}
+	.ol-popup:after, .ol-popup:before {
+	  top: 100%;
+	  border: solid transparent;
+	  content: " ";
+	  height: 0;
+	  width: 0;
+	  position: absolute;
+	  pointer-events: none;
+	}
+	.ol-popup:after {
+	  border-top-color: white;
+	  border-width: 10px;
+	  left: 48px;
+	  margin-left: -10px;
+	}
+	.ol-popup:before {
+	  border-top-color: #cccccc;
+	  border-width: 11px;
+	  left: 48px;
+	  margin-left: -11px;
+	}
+	.ol-popup-closer {
+	  text-decoration: none;
+	  position: absolute;
+	  top: 2px;
+	  right: 8px;
+	}
+	.ol-popup-closer:after {
+	  content: "✖";
+	}
     </style>
     <script src="http://openlayers.org/en/v3.11.2/build/ol.js" type="text/javascript"></script>
     <script type="text/javascript">
+    
+    var pointVector, filterObj = [];
+    
+    (function($){
+    	$.event.special.destroyed = {
+		remove: function(o) {
+			if (o.handler) {
+				o.handler()
+			}
+		}
+	}
+    })(jQuery)
+    
+    Array.prototype.max = function() {
+     return Math.max.apply(null, this);
+    };
+
+    Array.prototype.min = function() {
+     return Math.min.apply(null, this);
+    };
+    
+    function HSVtoRGB(h, s, v) {
+	    var r, g, b, i, f, p, q, t;
+	    if (arguments.length === 1) {
+		s = h.s, v = h.v, h = h.h;
+	    }
+	    i = Math.floor(h * 6);
+	    f = h * 6 - i;
+	    p = v * (1 - s);
+	    q = v * (1 - f * s);
+	    t = v * (1 - (1 - f) * s);
+	    switch (i % 6) {
+		case 0: r = v, g = t, b = p; break;
+		case 1: r = q, g = v, b = p; break;
+		case 2: r = p, g = v, b = t; break;
+		case 3: r = p, g = q, b = v; break;
+		case 4: r = t, g = p, b = v; break;
+		case 5: r = v, g = p, b = q; break;
+	    }
+	    return [Math.round(r * 255), 
+	    	    Math.round(g * 255), 
+	    	    Math.round(b * 255)];
+	 };
+    
+    
+	var normalStyle = new ol.style.Style({
+        	image: new ol.style.Circle({
+                        radius: 3,
+                        fill: new ol.style.Fill({
+                            color: 'red'
+                        })
+                    })	
+        });
+        
+        var invisble = new ol.style.Style({
+		name : "invisible",
+        	image: new ol.style.Circle({
+                        radius: 0,
+                        fill: new ol.style.Fill({
+                            color: [0,0,0,0]
+                        })
+                    })	
+        });
+	 
     document.addEventListener("DOMContentLoaded", function() {
         var iconStyle = new ol.style.Style({
            image: new ol.style.Icon ({
@@ -45,36 +155,26 @@
            })
         });
         
-        var thresholdStyle = new ol.style.Style({
+        function createPointStyle(color, radius){
+            return new ol.style.Style({
+		name : "default",
         	image: new ol.style.Circle({
-                        radius: 3,
+                        radius: radius,
                         fill: new ol.style.Fill({
-                            color: 'green'
+                            color: color
                         })
-                    })	
-        });
-        var normalStyle = new ol.style.Style({
-        	image: new ol.style.Circle({
-                        radius: 3,
-                        fill: new ol.style.Fill({
-                            color: 'red'
-                        })
-                    })	
-        });
-
+                })
+            });
+        };
+        
         var styleFunction = function (feature, resolution) {
-	    if (feature.get('rel') >= 0.6) {
-		return [thresholdStyle];
-	    } else {
-		return [normalStyle];
-	    }
+            var rad = feature.get("cAll") / 10.0 + 0.5;
+            var percentTrueCl = feature.get('rel');
+            var color = HSVtoRGB(percentTrueCl,1,1); // choose color from red to red (but 0 is not a data value, so it wont be confused)
+	    color.push(1);
+	    return [createPointStyle(color, rad)];
 	};
         
-        var vectorSource = new ol.source.Vector({
-                        //create empty vector
-                    });
-
-
           var iconFeature = new ol.Feature({
                         geometry: new ol.geom.Point(ol.proj.transform([13, 51], 'EPSG:4326','EPSG:3857')),
                         name: "adsf",
@@ -82,12 +182,37 @@
                         rainfall: 500
                     });
 
-        var pointVector = new ol.source.Vector({
-			  url : 'file:///home/dhaeb/dvl/R/Country-lore-analysis-Germany/geojson2.json',
+        pointVector = new ol.source.Vector({
+			  url : 'file:///home/dhaeb/dvl/R/Country-lore-analysis-Germany/febjahr_geo.json',
 			  format: new ol.format.GeoJSON()
         });
-                    
-        vectorSource.addFeature(iconFeature);
+
+	var sliderLowerDate = "sliderLowerDate",
+	    sliderCount   = "sliderCount",
+	    sliderHeight = "sliderHeight",
+	    sliderHigherDate = "sliderHigherDate";
+        
+    	pointVector.on("addfeature", function(vectorevent){
+		// erstelle Filterobjekt für alle Filter, dies es geben soll!
+		filterObj.push({
+			sliderHeight : false,
+			sliderCount : false,
+			sliderLowerDate : false,
+			sliderHeigherDate : false,
+			isFilteredOut : function() {return this.sliderHeight | this.sliderCount | this.sliderLowerDate | this.sliderHigherDate;}
+		});
+		vectorevent.feature.B.von = new Date(vectorevent.feature.B.von);
+		vectorevent.feature.B.bis = new Date(vectorevent.feature.B.bis); 		
+	});      
+	
+	var attribution = new ol.control.Attribution({
+	  collapsible: true,
+	  label: 'A',
+	  collapsed: true,
+	  tipLabel: 'Filter and copyright info',
+	  target : 'attribution'
+	});
+	
       	var map = new ol.Map({
         target: 'map',
         renderer: 'canvas',
@@ -96,69 +221,134 @@
             source: new ol.source.MapQuest({layer : "osm"})
           }),
           new ol.layer.Vector({
+          	name : "data",
           	source: pointVector,
-          	style : styleFunction	
+          	style : styleFunction,	
           })
         ],                               
         view: new ol.View({
           center: new ol.proj.transform([10.41,51.30], "EPSG:4326", "EPSG:3857"),
           zoom: 7
-        })
+        }),
+         controls: ol.control.defaults({ attribution: false }).extend([attribution])
        });
        	
        var element = document.getElementById('popup');
 
-	var popup = new ol.Overlay({
-	  element: element,
-	  positioning: 'bottom-center',
-	  stopEvent: false
-	});
-	map.addOverlay(popup);
+       /**
+	 * Elements that make up the popup.
+	 */
+	var container = document.getElementById('popup');
+	var content = document.getElementById('popup-content');
+	var closer = document.getElementById('popup-closer');
+
+       var popup = new ol.Overlay({
+	   element: container,
+	   autoPan : true,
+	   autoPanAnimation: {
+	     duration: 250
+	   },
+	   positioning: 'bottom-center',
+	   stopEvent: false
+       });
+
+	/**
+	 * Add a click handler to hide the popup.
+	 * @return {boolean} Don't follow the href.
+	 */
+	closer.onclick = function() {
+	  popup.setPosition(undefined);
+	  closer.blur();
+	  return false;
+	};
+
+       map.addOverlay(popup);
 	
-	// display popup on click
-	map.on('click', function(evt) {
-	  var feature = map.forEachFeatureAtPixel(evt.pixel,
-	      function(feature, layer) {
-		return feature;
-	      });
-	  console.log(feature);
-	  if (feature) {
-	    $(element).popover('destroy');
-	    var geometry = feature.getGeometry();
-	    var coord = geometry.getCoordinates();
-	    popup.setPosition(coord);
-	    $(element).popover({
-	      'placement': 'top',
-	      'html': true,
-	      'content': "<table><tr><td>Ort: </td><td>" + feature.get('Ort') + "</td></tr>" 
+	function createPopover(feature){
+	   return 	  "<table><tr><td>Ort: </td><td>" + feature.get('Ort') + "</td></tr>" 
 	      		+ "<tr><td>Bundesland: </td><td>" + feature.get('Bundesland') + "</td></tr>"
 	      		+ "<tr><td>Anzahl Messjahre: </td><td>" + feature.get('cAll') + "</td></tr>"
 	      		+ "<tr><td>Verhaeltnis: </td><td>" + feature.get('rel') + "</td></tr>"
 	      		+ "<tr><td>Lage: </td><td>" + feature.get('Lage') + "</td></tr>"
-	      + "</table>" 
-	    });
-	    $(element).popover('show');
-	  } else {
-	    $(element).popover('destroy');
-	  }
-	});
+	      		+ "<tr><td>Hoehe: </td><td>" + feature.get('Hoehe') + "</td></tr>"
+	      		+ "<tr><td>Von-Bis: </td><td>" + feature.get('von').getFullYear() + "-" + feature.get('bis').getFullYear() + "</td></tr>"
+	      		+ "</table>";
+	};
 	
-	// change mouse cursor when over marker
-	/*map.on('pointermove', function(e) {
-	  if (e.dragging) {
-	    $(element).popover('destroy');
-	    return;
-	  }
-	  var pixel = map.getEventPixel(e.originalEvent);
-	  var hit = map.hasFeatureAtPixel(pixel);
-	  $("#map").style.cursor = hit ? 'pointer' : '';
-	});*/
+	// display popup on click
+	map.on('click', function(evt) {
+	  evt.preventDefault();
+	  var feature = map.forEachFeatureAtPixel(evt.pixel,
+	      function(feature, layer) {
+		return feature;
+	      });
+	  if (feature) {
+		console.log(feature.B.Ort);
+		var coordinate = evt.coordinate;
+		popup.setPosition(coordinate);
+		content.innerHTML = createPopover(feature);
+	  } 
+	});
+	    
+	 $.each([sliderHeight, sliderCount, sliderLowerDate, sliderHigherDate], function(i, id){
+	 	var idCssSelector = "#" + id;
+	 	$(idCssSelector).on("change", function(chngEvt){
+			//console.log("test");
+			function ltCompareFloats(comparable, parseable) {
+				return comparable < parseFloat(parseable);
+			};
+
+			$.each(pointVector.getFeatures(),  function(i, e){ 
+			    var filter = filterObj[i];
+			    function checkFor(comparable, filterName, compareFunc){
+				  var result = false;
+				  if(chngEvt.target.id == filterName){
+					if(compareFunc(comparable, chngEvt.target.value)){
+						console.log(e.B.Ort, e.B.von);
+						result = true;
+						e.setStyle(invisble);
+		                        } 
+					filter[chngEvt.target.id] = result;
+				  } 
+				  return result;
+		            };
+			    checkFor(e.B.Hoehe, sliderHeight, ltCompareFloats) || checkFor(e.B.cAll, sliderCount, ltCompareFloats) || checkFor(e.B.von, sliderLowerDate, function(a,b){return a < new Date(parseInt(b), 0, 1);}) || checkFor(e.B.bis, sliderHigherDate, function(a,b){return a > new Date(parseInt(b), 0, 1);})
+
+			    if(!filter.isFilteredOut()) {
+				e.setStyle(styleFunction(e));
+			    } 
+				
+			});
+	 		//console.log(chngEvt.target.id);
+	 		//console.log(chngEvt);
+	 	});	
+	 });
       });
     </script>
     <title>OpenLayers 3 example</title>
   </head>
   <body>
     <div id="map" class="map"></div>
-    <div id="popup"></div>
+    <div id="popup_org"></div>
+    <div id="attribution"></div>  
+    <div>
+	 <label>Ueber Hoehe:</label>
+	 <input id="sliderHeight" type="range" min="0" max="1700" value="0" step="10" data-highlight="true" data-popup-enabled="true" />
+	 <!-- Zugspitze ist höchste mit 1652 -->
+    </div>
+    <div>
+	 <label>Stationen, mit groesser gleich Anzahl von Datensaetzen:</label>
+	 <input id="sliderCount" type="range" min="0" max="228" value="0" step="1" data-highlight="true" data-popup-enabled="true" />
+	 <!-- Dieser Wert is von CSV zu CSV unterschiedlich! -->
+    </div>
+    <div>
+	 <label>Station betrieben zwischen:</label>
+	 <input id="sliderLowerDate" type="range" min="1780" max="2010" value="1780" step="1" data-highlight="true" data-popup-enabled="true"/>
+	 <input id="sliderHigherDate" type="range" min="1780" max="2010" value="2010" step="1" data-highlight="true" data-popup-enabled="true"/>
+    </div>
+        <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
   </body>
 </html>
