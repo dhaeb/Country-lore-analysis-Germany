@@ -1,6 +1,5 @@
-var febjahr_geo_location = "https://raw.githubusercontent.com/dhaeb/Country-lore-analysis-Germany/master/febjahr_geo.json"
+var test;
 
-var pointVector, filterObj = [];
     
 Array.prototype.max = function() {
 return Math.max.apply(null, this);
@@ -55,7 +54,8 @@ var invisble = new ol.style.Style({
  
 
 
-var run = function() {
+var run = function(geojsonObject) {
+    var pointVector, filterObj = [];
     var iconStyle = new ol.style.Style({
        image: new ol.style.Icon ({
            anchor: [0.5, 46],
@@ -95,16 +95,16 @@ var run = function() {
     });
 
     pointVector = new ol.source.Vector({
-		      url : febjahr_geo_location,
-		      format: new ol.format.GeoJSON()
-    });
+        features: (new ol.format.GeoJSON()).readFeatures(geojsonObject),
+    }); 
 
     var sliderLowerDate = "sliderLowerDate",
     sliderCount   = "sliderCount",
     sliderHeight = "sliderHeight",
     sliderHigherDate = "sliderHigherDate";
 
-    pointVector.on("addfeature", function(vectorevent){
+    pointVector.forEachFeature(function(feature){
+console.log("add feature");
 	    // erstelle Filterobjekt für alle Filter, dies es geben soll!
 	    filterObj.push({
 		    sliderHeight : false,
@@ -113,8 +113,8 @@ var run = function() {
 		    sliderHeigherDate : false,
 		    isFilteredOut : function() {return this.sliderHeight | this.sliderCount | this.sliderLowerDate | this.sliderHigherDate;}
 	    });
-	    vectorevent.feature.B.von = new Date(vectorevent.feature.B.von);
-	    vectorevent.feature.B.bis = new Date(vectorevent.feature.B.bis); 		
+	    feature.B.von = new Date(feature.B.von);
+	    feature.B.bis = new Date(feature.B.bis); 		
     });      
 
     var attribution = new ol.control.Attribution({
@@ -144,6 +144,7 @@ var run = function() {
     }),
      controls: ol.control.defaults({ attribution: false }).extend([attribution])
     });
+    test = map;
 
     var element = document.getElementById('popup');
 
