@@ -193,7 +193,6 @@ $(function() {
 	    return feature;
           });
       if (feature) {
-	    console.log(feature.B.Ort);
 	    var coordinate = evt.coordinate;
 	    popup.setPosition(coordinate);
 	    content.innerHTML = createPopover(feature);
@@ -202,8 +201,7 @@ $(function() {
         
      $.each([sliderHeight, sliderCount, sliderLowerDate, sliderHigherDate], function(i, id){
      	var idCssSelector = "#" + id;
-     	$(idCssSelector).on("change", function(chngEvt){
-		    //console.log("test");
+     	$(idCssSelector).bind('slidestop input', function(chngEvt){
 		    function ltCompareFloats(comparable, parseable) {
 			    return comparable < parseFloat(parseable);
 		    };
@@ -214,7 +212,6 @@ $(function() {
 			      var result = false;
 			      if(chngEvt.target.id == filterName){
 				    if(compareFunc(comparable, chngEvt.target.value)){
-					    console.log(e.B.Ort, e.B.von);
 					    result = true;
 					    e.setStyle(invisble);
 	                            } 
@@ -229,8 +226,6 @@ $(function() {
 		        } 
 			
 		    });
-     		//console.log(chngEvt.target.id);
-     		//console.log(chngEvt);
      	});	
      });
 });
