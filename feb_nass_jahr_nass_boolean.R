@@ -38,6 +38,8 @@ cache(morePrecipDf)
 morePrecipDf$MONTH <- month(morePrecipDf$MESS_DATUM)
 morePrecipDf$YEAR <- year(morePrecipDf$MESS_DATUM)
 
+# Mache aus Tagesdaten Monatsdaten - Summiere Niederschläge pro Monat aus Tagesdaten
+
 totalNiedPerMonth <- agg(group_by(morePrecipDf, morePrecipDf$STATIONS_ID,morePrecipDf$YEAR,morePrecipDf$MONTH), 
                          sumNied = sum(morePrecipDf$NIEDERSCHLAGSHOEHE))
 cache(totalNiedPerMonth)
@@ -97,9 +99,5 @@ cFinal <- select(cFinal, cFinal$STATIONS_ID, cFinal$cAll, cFinal$cOverMean, cFin
 cFinal <- join(cFinal, metaDf, cFinal$STATIONS_ID == metaDf$STATIONS_ID)
 cFinal <- arrange(cFinal, desc(cFinal$"(cOverMean / cAll)"))
 cache(cFinal)
-# & totalNiedInFeb$YEAR_FEB == totalNiedPerYear$YEAR
-#join(totalNiedInFebMean, totalNiedMean, totalNiedInFebMean$STATIONS_ID == totalNiedMean$STATIONS_ID)
-exportCsv <- select(cFinal, cFinal$cAll, cFinal$cOverMean, alias(cFinal$"(cOverMean / cAll)", "Verhältnis"), cFinal$longitude, cFinal$latitude, cFinal$Stationsname, cFinal$Bundesland, cFinal$Lage)
+exportCsv <- select(cFinal, cFinal$cAll, cFinal$cOverMean, alias(cFinal$"(cOverMean / cAll)", "Verhältnis"), cFinal$longitude, cFinal$latitude, cFinal$Stationsname, cFinal$Bundesland, cFinal$Lage, cFinal$Statationshoehe, cFinal$von_datum, cFinal$bis_datum)
 write.df(exportCsv, "wetter.csv", "com.databricks.spark.csv", "overwrite")
-#precipMetaJoinedDf <- join(metaDf, morePrecipDf, metaDf$STATIONS_ID == morePrecipDf$STATIONS_ID)
-#head(totalNiedInFeb)
