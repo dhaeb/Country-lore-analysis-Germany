@@ -1,6 +1,4 @@
-var test;
-
-    
+  
 Array.prototype.max = function() {
 return Math.max.apply(null, this);
 };
@@ -32,6 +30,16 @@ function HSVtoRGB(h, s, v) {
     	    Math.round(b * 255)];
  };
 
+function createPopover(feature){
+  return  "<table><tr><td>Ort: </td><td>" + feature.get('Ort') + "</td></tr>" 
+	+ "<tr><td>Bundesland: </td><td>" + feature.get('Bundesland') + "</td></tr>"
+	+ "<tr><td>Anzahl Messjahre: </td><td>" + feature.get('cAll') + "</td></tr>"
+	+ "<tr><td>Verhaeltnis: </td><td>" + feature.get('rel') + "</td></tr>"
+	+ "<tr><td>Lage: </td><td>" + feature.get('Lage') + "</td></tr>"
+	+ "<tr><td>Hoehe: </td><td>" + feature.get('Hoehe') + "</td></tr>"
+	+ "<tr><td>Von-Bis: </td><td>" + feature.get('von').getFullYear() + "-" + feature.get('bis').getFullYear() + "</td></tr>"
+	+ "</table>";
+};
 
 var normalStyle = new ol.style.Style({
 	image: new ol.style.Circle({
@@ -43,59 +51,88 @@ var normalStyle = new ol.style.Style({
 });
 
 var invisble = new ol.style.Style({
-	name : "invisible",
-	image: new ol.style.Circle({
-                radius: 0,
-                fill: new ol.style.Fill({
-                    color: [0,0,0,0]
-                })
-            })	
+  name : "invisible",
+  image: new ol.style.Circle({
+	  radius: 0,
+	  fill: new ol.style.Fill({
+	      color: [0,0,0,0]
+	  })
+      })	
 });
  
 
+var iconStyle = new ol.style.Style({
+    image: new ol.style.Icon ({
+	anchor: [0.5, 46],
+	anchorXUnits: 'fraction',
+	anchorYUnits: 'pixels',
+	opacity: 0.65,
+	// create commons license
+	src: 'http://iconshow.me/download.phpl?file=path/media/images/Mixed/small-n-flat-icon/png2/48/-map-marker.png' 
+    })
+});
+
+function createPointStyle(color, radius){
+  return new ol.style.Style({
+	name : "default",
+	image: new ol.style.Circle({
+	    radius: radius,
+	    fill: new ol.style.Fill({
+		color: color
+	    })
+	})
+  });
+};
+
+var styleFunction = function (feature, resolution) {
+    var rad = feature.get("cAll") / 10.0 + 0.5;
+    var percentTrueCl = feature.get('rel');
+    var color = HSVtoRGB(percentTrueCl,1,1); // choose color from red to red (but 0 is not a data value, so it wont be confused)
+    color.push(1);
+    return [createPointStyle(color, rad)];
+};
+
+var iconFeature = new ol.Feature({
+    geometry: new ol.geom.Point(ol.proj.transform([13, 51], 'EPSG:4326','EPSG:3857')),
+    name: "adsf",
+    population: 4000,
+    rainfall: 500
+});
+
+var attribution = new ol.control.Attribution({
+  collapsible: true,
+  label: 'A',
+  collapsed: true,
+  tipLabel: 'Filter and copyright info',
+  target : 'attribution'
+});
+
+var map; 
+$(function(){
+  map = new ol.Map({
+    target: 'map',
+    renderer: 'canvas',
+    layers: [
+      new ol.layer.Tile({
+	source: new ol.source.MapQuest({layer : "osm"})
+      })
+    ],                               
+    view: new ol.View({
+      center: new ol.proj.transform([10.41,51.30], "EPSG:4326", "EPSG:3857"),
+      zoom: 7
+    }),
+    controls: ol.control.defaults({ attribution: false }).extend([attribution])
+  });
+});
 
 var run = function(geojsonObject) {
     var pointVector, filterObj = [];
-    var iconStyle = new ol.style.Style({
-       image: new ol.style.Icon ({
-           anchor: [0.5, 46],
-           anchorXUnits: 'fraction',
-           anchorYUnits: 'pixels',
-           opacity: 0.65,
-           // create commons license
-           src: 'http://iconshow.me/download.phpl?file=path/media/images/Mixed/small-n-flat-icon/png2/48/-map-marker.png' 
-       })
-    });
-
-    function createPointStyle(color, radius){
-        return new ol.style.Style({
-	    name : "default",
-	    image: new ol.style.Circle({
-                radius: radius,
-                fill: new ol.style.Fill({
-                    color: color
-                })
-            })
-        });
-    };
-
-    var styleFunction = function (feature, resolution) {
-        var rad = feature.get("cAll") / 10.0 + 0.5;
-        var percentTrueCl = feature.get('rel');
-        var color = HSVtoRGB(percentTrueCl,1,1); // choose color from red to red (but 0 is not a data value, so it wont be confused)
-        color.push(1);
-        return [createPointStyle(color, rad)];
-    };
-
-    var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.transform([13, 51], 'EPSG:4326','EPSG:3857')),
-        name: "adsf",
-        population: 4000,
-        rainfall: 500
-    });
 
     pointVector = new ol.source.Vector({
-        features: (new ol.format.GeoJSON()).readFeatures(geojsonObject),
+        features: (new ol.format.GeoJSON()).readFeatures(geojsonObject,{
+	    dataProjection : "EPSG:4326",
+	    featureProjection : "EPSG:3857"
+	}),
     }); 
 
     var sliderLowerDate = "sliderLowerDate",
@@ -104,7 +141,7 @@ var run = function(geojsonObject) {
     sliderHigherDate = "sliderHigherDate";
 
     pointVector.forEachFeature(function(feature){
-console.log("add feature");
+    console.log("add feature");
 	    // erstelle Filterobjekt für alle Filter, dies es geben soll!
 	    filterObj.push({
 		    sliderHeight : false,
@@ -116,37 +153,6 @@ console.log("add feature");
 	    feature.B.von = new Date(feature.B.von);
 	    feature.B.bis = new Date(feature.B.bis); 		
     });      
-
-    var attribution = new ol.control.Attribution({
-      collapsible: true,
-      label: 'A',
-      collapsed: true,
-      tipLabel: 'Filter and copyright info',
-      target : 'attribution'
-    });
-
-    var map = new ol.Map({
-    target: 'map',
-    renderer: 'canvas',
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.MapQuest({layer : "osm"})
-      }),
-      new ol.layer.Vector({
-      	name : "data",
-      	source: pointVector,
-      	style : styleFunction,	
-      })
-    ],                               
-    view: new ol.View({
-      center: new ol.proj.transform([10.41,51.30], "EPSG:4326", "EPSG:3857"),
-      zoom: 7
-    }),
-     controls: ol.control.defaults({ attribution: false }).extend([attribution])
-    });
-    test = map;
-
-    var element = document.getElementById('popup');
 
     /**
      * Elements that make up the popup.
@@ -176,17 +182,6 @@ console.log("add feature");
     };
 
     map.addOverlay(popup);
-
-    function createPopover(feature){
-       return 	  "<table><tr><td>Ort: </td><td>" + feature.get('Ort') + "</td></tr>" 
-          		+ "<tr><td>Bundesland: </td><td>" + feature.get('Bundesland') + "</td></tr>"
-          		+ "<tr><td>Anzahl Messjahre: </td><td>" + feature.get('cAll') + "</td></tr>"
-          		+ "<tr><td>Verhaeltnis: </td><td>" + feature.get('rel') + "</td></tr>"
-          		+ "<tr><td>Lage: </td><td>" + feature.get('Lage') + "</td></tr>"
-          		+ "<tr><td>Hoehe: </td><td>" + feature.get('Hoehe') + "</td></tr>"
-          		+ "<tr><td>Von-Bis: </td><td>" + feature.get('von').getFullYear() + "-" + feature.get('bis').getFullYear() + "</td></tr>"
-          		+ "</table>";
-    };
 
     // display popup on click
     map.on('click', function(evt) {
@@ -231,5 +226,11 @@ console.log("add feature");
 		    });
      	});	
      });
+     
+     map.addLayer(new ol.layer.Vector({
+      	name : "currentData",
+      	source: pointVector,
+      	style : styleFunction,	
+      }));
 };
 

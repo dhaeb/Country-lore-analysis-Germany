@@ -6,7 +6,6 @@ var test;
 
 $(function(){
     showDialog(function(content){
-        //run(JSON.parse(content));
-        run(content);
+        run(JSON.parse(content));
     });
 });
