@@ -84,10 +84,14 @@ function createPointStyle(color, radius){
   });
 };
 
+function toColorScale(floating){
+  return HSVtoRGB((1 - floating) / 3,1,1);
+}
+
 var styleFunction = function (feature, resolution) {
-    var rad = feature.get("cAll") / 10.0 + 0.5;
+    var rad = feature.get("cAll") / 10.0 + 3;
     var percentTrueCl = feature.get('rel');
-    var color = HSVtoRGB(percentTrueCl,1,1); // choose color from red to red (but 0 is not a data value, so it wont be confused)
+    var color = toColorScale(percentTrueCl); // choose color from red to red (but 0 is not a data value, so it wont be confused)
     color.push(1);
     return [createPointStyle(color, rad)];
 };
