@@ -50,7 +50,7 @@ totalNiedPerYear <- agg(group_by(totalNiedPerMonth, totalNiedPerMonth$STATIONS_I
 totalNiedMean <- agg(group_by(totalNiedPerYear, totalNiedPerYear$STATIONS_ID), 
                      totalNiedMean = mean(totalNiedPerYear$sumNiedPerYear))
 
-totalNiedMean <- select(totalNiedMean, alias(totalNiedMean$STATIONS_ID, "SID"),
+totalNiedMean <- select(totalNiedMean, SparkR::alias(totalNiedMean$STATIONS_ID, "SID"),
                         totalNiedMean$totalNiedMean)
 cache(totalNiedMean)
 
@@ -59,9 +59,9 @@ totalNiedInFeb <- where(totalNiedPerMonth, totalNiedPerMonth$MONTH == 2)
 totalNiedInFebMean <- agg(group_by(totalNiedInFeb, totalNiedInFeb$STATIONS_ID), 
                           totalNiedMeanFeb = mean(totalNiedInFeb$sumNied))
 
-totalNiedInFeb <- select(totalNiedInFeb, alias(totalNiedInFeb$STATIONS_ID, "SID"), 
-                         alias(totalNiedInFeb$YEAR, "YEAR_FEB"), 
-                         alias(totalNiedInFeb$sumNied, "sumNiedFeb"))
+totalNiedInFeb <- select(totalNiedInFeb, SparkR::alias(totalNiedInFeb$STATIONS_ID, "SID"), 
+                         SparkR::alias(totalNiedInFeb$YEAR, "YEAR_FEB"), 
+                         SparkR::alias(totalNiedInFeb$sumNied, "sumNiedFeb"))
 
 cache(totalNiedInFeb)
 
@@ -99,5 +99,5 @@ cFinal <- select(cFinal, cFinal$STATIONS_ID, cFinal$cAll, cFinal$cOverMean, cFin
 cFinal <- join(cFinal, metaDf, cFinal$STATIONS_ID == metaDf$STATIONS_ID)
 cFinal <- arrange(cFinal, desc(cFinal$"(cOverMean / cAll)"))
 cache(cFinal)
-exportCsv <- select(cFinal, cFinal$cAll, cFinal$cOverMean, alias(cFinal$"(cOverMean / cAll)", "Verhältnis"), cFinal$longitude, cFinal$latitude, cFinal$Stationsname, cFinal$Bundesland, cFinal$Lage, cFinal$Statationshoehe, cFinal$von_datum, cFinal$bis_datum)
+exportCsv <- select(cFinal, cFinal$cAll, cFinal$cOverMean, SparkR::alias(cFinal$"(cOverMean / cAll)", "Verhältnis"), cFinal$longitude, cFinal$latitude, cFinal$Stationsname, cFinal$Bundesland, cFinal$Lage, cFinal$Statationshoehe, cFinal$von_datum, cFinal$bis_datum)
 write.df(exportCsv, "wetter.csv", "com.databricks.spark.csv", "overwrite")
