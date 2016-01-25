@@ -8,4 +8,4 @@ cd $FOLDER_NAME;
 cat part* > $CSV_FILE
 mv $CSV_FILE ..
 cd ..
-./non_cluster_processes/csv-to-geojson.groovy $CSV_FILE > "$TARGET_NAME.json"
+./non_cluster_processes/csv-to-geojson.groovy $CSV_FILE > "intermeditate_results/$TARGET_NAME.json"
