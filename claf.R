@@ -22,7 +22,7 @@ klSchema <- structType(
   structField("SCHNEEHOEHE", "double")
 )
 
-clInput <- list(
+clInputOktoberWarmFein <- list(
   pathToMeta = "/home/dhaeb/dvl/data/dwd/kl/KL_Tageswerte_Beschreibung_Stationen4.txt",
   pathToData = "/home/dhaeb/dvl/data/dwd/kl/kl_total.csv",
   schema = klSchema,
@@ -40,6 +40,26 @@ clInput <- list(
     return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
   },
   folderName = "oktober_warm_fein"
+)
+
+clInputOktoberNassKühl <- list(
+  pathToMeta = "/home/dhaeb/dvl/data/dwd/kl/KL_Tageswerte_Beschreibung_Stationen4.txt",
+  pathToData = "/home/dhaeb/dvl/data/dwd/kl/kl_total.csv",
+  schema = klSchema,
+  triggerCols = c("LUFTTEMPERATUR_MINIMUM", "NIEDERSCHLAGSHOEHE"),
+  triggerTimeFilter = "MONTH = 10",
+  triggerExpressionFilter = function(df){
+    return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL & df$NIEDERSCHLAGSHOEHE_AGG_MONTH > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL)
+  },
+  observationCols = c("LUFTTEMPERATUR_MAXIMUM"),
+  observationTimeFilter = "MONTH = 1 or MONTH = 2",
+  observationExpression = function(df){
+    return(df$LUFTTEMPERATUR_MAXIMUM_AGG_MONTH > df$LUFTTEMPERATUR_MAXIMUM_AGG_TOTAL)
+  },
+  joinExpression = function(triggerTotalDf, observationTotalDf){ 
+    return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
+  },
+  folderName = "oktober_nass_kuehl"
 )
 
 aggregateByStatIdAndYear <- function(df, colsNames) {
