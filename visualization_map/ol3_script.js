@@ -88,14 +88,6 @@ function toColorScale(floating){
   return HSVtoRGB((1 - floating) / 3,1,1);
 }
 
-var styleFunction = function (feature, resolution) {
-    var rad = feature.get("cAll") / 10.0 + 3;
-    var percentTrueCl = feature.get('rel');
-    var color = toColorScale(percentTrueCl); // choose color from red to red (but 0 is not a data value, so it wont be confused)
-    color.push(1);
-    return [createPointStyle(color, rad)];
-};
-
 var iconFeature = new ol.Feature({
     geometry: new ol.geom.Point(ol.proj.transform([13, 51], 'EPSG:4326','EPSG:3857')),
     name: "adsf",
@@ -142,22 +134,90 @@ var run = function(geojsonObject) {
     var sliderLowerDate = "sliderLowerDate",
     sliderCount   = "sliderCount",
     sliderHeight = "sliderHeight",
-    sliderHigherDate = "sliderHigherDate";
-
+    sliderHigherDate = "sliderHigherDate",
+    
+    sliders = [sliderHeight, sliderCount, sliderLowerDate, sliderHigherDate];
+    
+    // init dynamic slider ranges
+    var dynamicSliderRanges = {
+      minFieldName : "MIN",
+      maxFieldName : "MAX",
+      getMinOf : function(fieldName){
+	return this[fieldName + this.minFieldName];
+      },
+      getMaxOf : function(fieldName){
+	return this[fieldName + this.maxFieldName];
+      },
+      adjustMinMaxFor : function(fieldName, value){
+	var currentMin = this[fieldName + this.minFieldName];
+	if(!currentMin | currentMin > value){
+	  this[fieldName + this.minFieldName] = value;
+	}
+	var currentMax = this[fieldName + this.maxFieldName];
+	if(!currentMax | currentMax  < value){
+	  this[fieldName + this.maxFieldName] = value;
+	}
+      }
+    };
+    
     pointVector.forEachFeature(function(feature){
-    console.log("add feature");
-	    // erstelle Filterobjekt für alle Filter, dies es geben soll!
-	    filterObj.push({
-		    sliderHeight : false,
-		    sliderCount : false,
-		    sliderLowerDate : false,
-		    sliderHeigherDate : false,
-		    isFilteredOut : function() {return this.sliderHeight | this.sliderCount | this.sliderLowerDate | this.sliderHigherDate;}
-	    });
-	    feature.B.von = new Date(feature.B.von);
-	    feature.B.bis = new Date(feature.B.bis); 		
+      // erstelle Filterobjekt für alle Filter, dies es geben soll!
+      filterObj.push({
+	      sliderHeight : false,
+	      sliderCount : false,
+	      sliderLowerDate : false,
+	      sliderHigherDate : false,
+	      isFilteredOut : function() {return this.sliderHeight | this.sliderCount | this.sliderLowerDate | this.sliderHigherDate;}
+      });
+      feature.B.von = new Date(feature.B.von);
+      feature.B.bis = new Date(feature.B.bis); 
+      
+      // init ranges
+      dynamicSliderRanges.adjustMinMaxFor(sliderHeight, parseFloat(feature.B.Hoehe));
+      dynamicSliderRanges.adjustMinMaxFor(sliderCount, feature.B.cAll);
+      dynamicSliderRanges.adjustMinMaxFor(sliderLowerDate, feature.B.von.getFullYear());
+      dynamicSliderRanges.adjustMinMaxFor(sliderHigherDate, feature.B.bis.getFullYear());
     });      
-
+  
+    var countDatasets = filterObj.length;
+   
+    $.each(sliders, function(i,sliderId){
+      function adjustSlider(applyable){
+	if(!applyable){
+	   applyable = function(slider, min, max){
+	      slider.min = min;
+	      slider.value = min;
+	      slider.max = max;
+	   }; 
+	}
+	var curSlider = $("#" + sliderId)[0];
+	var min = dynamicSliderRanges.getMinOf(sliderId);
+	var max = dynamicSliderRanges.getMaxOf(sliderId);
+	applyable(curSlider, min, max);
+      }
+      if(sliderId == sliderHigherDate){
+	adjustSlider(function(slider, min, max){
+	  slider.min = min;
+	  slider.max = max;
+	  slider.value = max;
+	});
+      } else {
+	adjustSlider();
+      }
+    });
+    
+    // create stylefunction for the feature points
+    
+    var defaultRad = Math.abs(2 + 200 / countDatasets); //calculate less size if there are many stations to be shown
+    var styleFunction = function (feature, resolution) {
+        var maxCountDatasets = dynamicSliderRanges.getMaxOf(sliderCount);
+	var rad = feature.get("cAll") * 10 / maxCountDatasets + defaultRad; // the main radius of a station marker can switch from ~defaultRad and 10 + defaultRad
+	var percentTrueCl = feature.get('rel');
+	var color = toColorScale(percentTrueCl); // choose color from green to red 
+	color.push(1); // add the fourth member to the array representing the opacity
+	return [createPointStyle(color, rad)];
+    };
+    
     /**
      * Elements that make up the popup.
      */
@@ -201,7 +261,7 @@ var run = function(geojsonObject) {
       } 
     });
         
-     $.each([sliderHeight, sliderCount, sliderLowerDate, sliderHigherDate], function(i, id){
+     $.each(sliders, function(i, id){
      	var idCssSelector = "#" + id;
      	$(idCssSelector).bind('slidestop input', function(chngEvt){
 		    function ltCompareFloats(comparable, parseable) {
