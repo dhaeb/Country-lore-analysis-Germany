@@ -19,6 +19,10 @@ var readFile = function(fileInput, resultCallback) {
     }
 }
 
+var notEmptyInput = function(fileInput){
+    return fileInput.files.length != 0;
+}
+
 var getInputElement = function(){
     return $("<input type='file' id='fileinput' accept='.json'/>");
 }
@@ -27,9 +31,11 @@ var getCloseButton = function(dialog, fileInput, resultCallback){
     return $("<button>")
         .text("OK")
         .bind("click", function(){ 
-            readFile(fileInput, resultCallback); 
-            dialog.close(); 
-            dialog.parentNode.removeChild(dialog);
+            if(notEmptyInput(fileInput)){
+                readFile(fileInput, resultCallback); 
+                dialog.close(); 
+                dialog.parentNode.removeChild(dialog);
+            }
         }
     );
 }
