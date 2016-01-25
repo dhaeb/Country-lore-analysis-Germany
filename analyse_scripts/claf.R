@@ -29,12 +29,12 @@ clInputOktoberWarmFein <- list(
   triggerCols = c("LUFTTEMPERATUR_MAXIMUM", "SONNENSCHEINDAUER"),
   triggerTimeFilter = "MONTH = 10",
   triggerExpressionFilter = function(df){
-    return(df$LUFTTEMPERATUR_MAXIMUM_AGG_MONTH > df$LUFTTEMPERATUR_MAXIMUM_AGG_TOTAL & df$SONNENSCHEINDAUER_AGG_MONTH > df$SONNENSCHEINDAUER_AGG_TOTAL)
+    return(df$LUFTTEMPERATUR_MAXIMUM_AGG_MONTH_TRIG > df$LUFTTEMPERATUR_MAXIMUM_AGG_TOTAL_TRIG & df$SONNENSCHEINDAUER_AGG_MONTH_TRIG > df$SONNENSCHEINDAUER_AGG_TOTAL_TRIG)
   },
   observationCols = c("LUFTTEMPERATUR_MINIMUM"),
   observationTimeFilter = "MONTH = 1 or MONTH = 2",
   observationExpression = function(df){
-    return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL)
+    return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH_OBS < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL_OBS)
   },
   joinExpression = function(triggerTotalDf, observationTotalDf){ 
     return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
@@ -49,12 +49,12 @@ clInputOktoberNassKühl <- list(
   triggerCols = c("LUFTTEMPERATUR_MINIMUM", "NIEDERSCHLAGSHOEHE"),
   triggerTimeFilter = "MONTH = 10",
   triggerExpressionFilter = function(df){
-    return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL & df$NIEDERSCHLAGSHOEHE_AGG_MONTH > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL)
+    return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH_TRIG < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL_TRIG & df$NIEDERSCHLAGSHOEHE_AGG_MONTH_TRIG > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL_TRIG)
   },
   observationCols = c("LUFTTEMPERATUR_MAXIMUM"),
   observationTimeFilter = "MONTH = 1 or MONTH = 2",
   observationExpression = function(df){
-    return(df$LUFTTEMPERATUR_MAXIMUM_AGG_MONTH > df$LUFTTEMPERATUR_MAXIMUM_AGG_TOTAL)
+    return(df$LUFTTEMPERATUR_MAXIMUM_AGG_MONTH_OBS > df$LUFTTEMPERATUR_MAXIMUM_AGG_TOTAL_OBS)
   },
   joinExpression = function(triggerTotalDf, observationTotalDf){ 
     return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
@@ -62,13 +62,33 @@ clInputOktoberNassKühl <- list(
   folderName = "oktober_nass_kuehl"
 )
 
-aggregateByStatIdAndYear <- function(df, colsNames) {
+clInputFebruarNassJahrNass <- list(
+  pathToMeta = "/home/dhaeb/dvl/data/dwd/more_precip/RR_Tageswerte_Beschreibung_Stationen2.txt",
+  pathToData = "/home/dhaeb/dvl/data/dwd/more_precip/moreprecip_total.csv",
+  schema = morePrecipSchema,
+  triggerCols = c("NIEDERSCHLAGSHOEHE"),
+  triggerTimeFilter = "MONTH = 2",
+  triggerExpressionFilter = function(df){
+    return(df$NIEDERSCHLAGSHOEHE_AGG_MONTH_TRIG > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL_TRIG)
+  },
+  observationCols = c("NIEDERSCHLAGSHOEHE"),
+  observationTimeFilter = "",
+  observationExpression = function(df){
+    return(df$NIEDERSCHLAGSHOEHE_AGG_MONTH_OBS > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL_OBS)
+  },
+  joinExpression = function(triggerTotalDf, observationTotalDf){ 
+    return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == observationTotalDf$Y)
+  },
+  folderName = "feb_nass_jahr_nass"
+)
+
+aggregateByStatIdAndYear <- function(df, colsNames, aggColSuffix) {
   #   build agg call for do call because the list of input columns is variable
   argListGroupByPart <- list(groupBy(df, df$STATIONS_ID, df$YEAR))  
   #   extract colnames to list
   colNameList <- list()
   for(colName in colsNames){
-    aggColNameMonth <- paste(colName, "_AGG_MONTH", sep="")
+    aggColNameMonth <- paste(colName, aggColSuffix, sep="")
     colNameList[aggColNameMonth] <- df[[colName]]
   }
   #   add mean call for agg
@@ -88,10 +108,10 @@ aggregateByStatIdAndYear <- function(df, colsNames) {
   return(do.call("select", selectArgList))
 }
 
-aggregateByStatId <- function(df, colNames, joinable){
+aggregateByStatId <- function(df, colNames, joinable, aggColSuffix){
   for(colName in colNames){
     # calculate the aggregation over all years
-    aggColName <- paste(colName, "_AGG_TOTAL", sep="")
+    aggColName <- paste(colName, aggColSuffix, sep="")
     stationIdColName <- paste(colName, "_STATIONS_ID", sep="")
     dfColAgg <- agg(groupBy(df, df$STATIONS_ID), aggCol = mean(df[[colName]]))
     dfColAgg <- select(dfColAgg, SparkR::alias(dfColAgg$STATIONS_ID, stationIdColName), SparkR::alias(dfColAgg$aggCol, aggColName))
@@ -150,21 +170,26 @@ analyseCountryLore <- function(clInput){
   
   
   #     columns aggregation by month (STATIONS_ID, YEAR)
-  triggerDfColAggMonth <- aggregateByStatIdAndYear(triggerDf, clInput$triggerCols)
+  triggerDfColAggMonth <- aggregateByStatIdAndYear(triggerDf, clInput$triggerCols, "_AGG_MONTH_TRIG")
   #     trigger columns aggregation by month (STATIONS_ID)
-  triggerDfColAggMonth <- aggregateByStatId(triggerDf, clInput$triggerCols, triggerDfColAggMonth)
+  triggerDfColAggMonth <- aggregateByStatId(triggerDf, clInput$triggerCols, triggerDfColAggMonth, "_AGG_TOTAL_TRIG")
   #     just use data, which is related to the country lore
   triggerTotalDf <- SparkR::filter(triggerDfColAggMonth, clInput$triggerExpression(triggerDfColAggMonth))
   cache(triggerTotalDf)
   countFullfillingTriggeringRule <- count(triggerTotalDf)
   # print(SparkR::head(triggerDfColAggTotal))
   
+  
   #   observation columns filter
-  observationDf <- SparkR::filter(dataDf, clInput$observationTimeFilter )
+  if(nchar(clInput$observationTimeFilter) == 0){
+    observationDf <- dataDf
+  }  else {
+    observationDf <- SparkR::filter(dataDf, clInput$observationTimeFilter )
+  }
   #     columns aggregation by month (STATIONS_ID, YEAR)
-  observationDfColAggMonth <- aggregateByStatIdAndYear(observationDf, clInput$observationCols)
+  observationDfColAggMonth <- aggregateByStatIdAndYear(observationDf, clInput$observationCols, "_AGG_MONTH_OBS")
   #     trigger columns aggregation by month (STATIONS_ID)
-  observationTotalDf <- aggregateByStatId(observationDf, clInput$observationCols, observationDfColAggMonth)
+  observationTotalDf <- aggregateByStatId(observationDf, clInput$observationCols, observationDfColAggMonth, "_AGG_TOTAL_OBS")
   cache(observationTotalDf)
   
   # extract other columns using functional programming
@@ -216,6 +241,7 @@ analyseCountryLore <- function(clInput){
   s <- aggregateResults(totalResult$Lage == "S")
   w <- aggregateResults(totalResult$Lage == "W")
   exportCsv <- select(totalResult, totalResult$countAll, totalResult$cFullfilling, totalResult$rel, totalResult$longitude, totalResult$latitude, totalResult$Stationsname, totalResult$Bundesland, totalResult$Lage, totalResult$Statationshoehe, totalResult$von_datum, totalResult$bis_datum)
+  exportCsv <- orderBy(exportCsv, exportCsv$rel)
   write.df(exportCsv, clInput$folderName, "com.databricks.spark.csv", "overwrite")
   print(total)
   print(n)
