@@ -82,6 +82,27 @@ clInputFebruarNassJahrNass <- list(
   folderName = "feb_nass_jahr_nass"
 )
 
+clInputMartiniWinter <- list(
+  pathToMeta = "/home/dhaeb/dvl/data/dwd/kl/KL_Tageswerte_Beschreibung_Stationen4.txt",
+  pathToData = "/home/dhaeb/dvl/data/dwd/kl/kl_total.csv",
+  schema = klSchema,
+  triggerCols = c("SCHNEEHOEHE"),
+  triggerTimeFilter = "MONTH = 11 and DAY BETWEEN 10 and 12",
+  triggerExpressionFilter = function(df){
+    return(df$SCHNEEHOEHE_AGG_MONTH_TRIG > 0)
+  },
+  observationCols = c("LUFTTEMPERATUR_MINIMUM"),
+  observationTimeFilter = "MONTH = 1 or MONTH = 2",
+  observationExpression = function(df){
+    return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH_OBS < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL_OBS)
+  },
+  joinExpression = function(triggerTotalDf, observationTotalDf){ 
+    return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == observationTotalDf$Y)
+  },
+  folderName = "martini_winter"
+)
+
+
 aggregateByStatIdAndYear <- function(df, colsNames, aggColSuffix) {
   #   build agg call for do call because the list of input columns is variable
   argListGroupByPart <- list(groupBy(df, df$STATIONS_ID, df$YEAR))  
