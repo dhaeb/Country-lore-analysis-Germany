@@ -4,8 +4,8 @@
 # parameter3: luft - LUFTTEMPERATUR (Juli - August)
 
 ## load 'set_sqlContext.R' and 'schemata.R' first
-source("/Users/martinmac/Country-lore-analysis-Germany/schemata.R")
-source("/Users/martinmac/Country-lore-analysis-Germany/set_sqlContext.R")
+source("./schemata.R")
+source("./set_sqlContext.R")
 
 # import data
 inDf <- read.df(sqlContext,
