@@ -1,4 +1,7 @@
-source("/Users/martinmac/Country-lore-analysis-Germany/COR_FUNCTION.R")
+setwd("/Users/martinmac/Country-lore-analysis-Germany")
+source("analyse_scripts/COR_FUNCTION.R")
+
+# source("/Users/martinmac/Country-lore-analysis-Germany/COR_FUNCTION.R")
 
 csvDfT <-
     read.csv(
@@ -38,6 +41,13 @@ dfT30[[4]]
 ################################
 corSONNEt<- cal_corT(dfT30[[1]],dfT30[[2]])
 tropfen <- left_join(corSONNEt[[1]],stationDf_csv)
-head(tropfen)
 
-write.csv(tropfen,"Outputs/tropfen_januar_schnee_mai_COR.csv")
+head(tropfen)
+# write.csv(tropfen,"Outputs/tropfen_januar_schnee_mai_COR.csv")
+
+tropfen$sid2 <- tropfen$SID
+
+tropfen <- select(tropfen, SID, yearCount,sid2,COR,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+head(tropfen)
+write.table(tropfen,"Outputs/tropfen_januar_schnee_mai_COR.csv",col.names=FALSE)
+

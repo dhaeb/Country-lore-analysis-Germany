@@ -1,7 +1,5 @@
-source("/Users/martinmac/Country-lore-analysis-Germany/COR_FUNCTION.R")
-
-# read csv
-setwd("/Users/martinmac/Big_Data_Prak_Lani")
+setwd("/Users/martinmac/Country-lore-analysis-Germany")
+source("analyse_scripts/COR_FUNCTION.R")
 
 csvDf <-
     read.csv(
@@ -239,4 +237,24 @@ colnames(corS30s2)[3:8] <-c("corSONNEz1", "corSONNEz2", "corREGENz1", "corREGENz
 sieben <- left_join(corS30s2,stationDf_csv)
 head(sieben)
 
-write.csv(sieben,"Outputs/siebenschlaefertag_COR.csv")
+sieben$sid2 <- sieben$SID
+
+sieben_s1 <- select(sieben, SID, yearCount,sid2,corSONNEz1,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+sieben_s2 <- select(sieben, SID, yearCount,sid2,corSONNEz2,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+sieben_r1 <- select(sieben, SID, yearCount,sid2,corREGENz1,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+sieben_r2 <- select(sieben, SID, yearCount,sid2,corREGENz2,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+sieben_t1 <- select(sieben, SID, yearCount,sid2,corTEMPz1,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+sieben_t2 <- select(sieben, SID, yearCount,sid2,corTEMPz2,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
+
+head(sieben_t2)
+
+write.table(sieben_s1,"Outputs/siebenschlaefertag_COR_s1.csv",col.names=FALSE)
+write.table(sieben_s2,"Outputs/siebenschlaefertag_COR_s2.csv",col.names=FALSE)
+write.table(sieben_r1,"Outputs/siebenschlaefertag_COR_r1.csv",col.names=FALSE)
+write.table(sieben_r2,"Outputs/siebenschlaefertag_COR_r2.csv",col.names=FALSE)
+write.table(sieben_t1,"Outputs/siebenschlaefertag_COR_t1.csv",col.names=FALSE)
+write.table(sieben_t2,"Outputs/siebenschlaefertag_COR_t2.csv",col.names=FALSE)
+
+# write.csv(sieben,"Outputs/siebenschlaefertag_COR.csv")
+
+
