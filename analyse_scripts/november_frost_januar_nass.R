@@ -82,6 +82,9 @@ joinedDf <- join(metaDf, mySt, metaDf$STATIONS_ID == mySt$STATIONS_ID)
 
 mySt$MONTH <- month(mySt$MESS_DATUM)
 mySt$YEAR <- year(mySt$MESS_DATUM)
+myStMean <- agg(group_by(mySt, mySt$STATIONS_ID), mean = mean(mySt$LUFTTEMPERATUR))
+
+
 
 a <- agg(group_by(mySt, "STATIONS_ID"), minDatum = min(mySt$MESS_DATUM), maxDatum = max(mySt$MESS_DATUM), meanLTM = mean(mySt$LUFTTEMPERATUR_MAXIMUM))
 

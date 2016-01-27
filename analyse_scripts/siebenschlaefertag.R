@@ -5,6 +5,26 @@
 
 # a case:= specific station in specific year
 
+klSchema <- structType(
+  structField("STATIONS_ID", "integer"),
+  structField("MESS_DATUM", "date"),
+  structField("QUALITAETS_NIVEAU", "double"),
+  structField("LUFTTEMPERATUR", "double"),
+  structField("DAMPFDRUCK", "double"),
+  structField("BEDECKUNGSGRAD", "double"),
+  structField("LUFTDRUCK_STATIONSHOEHE", "double"),
+  structField("REL_FEUCHTE", "double"),
+  structField("WINDGESCHWINDIGKEIT", "double"),
+  structField("LUFTTEMPERATUR_MAXIMUM", "double"),
+  structField("LUFTTEMPERATUR_MINIMUM", "double"),
+  structField("LUFTTEMP_AM_ERDB_MINIMUM", "double"),
+  structField("WINDSPITZE_MAXIMUM", "double"),
+  structField("NIEDERSCHLAGSHOEHE", "double"),
+  structField("NIEDERSCHLAGSHOEHE_IND", "double"),
+  structField("SONNENSCHEINDAUER", "double"),
+  structField("SCHNEEHOEHE", "double")
+)
+
 # import data
 inDf1 <- read.df(sqlContext,
                 path = "/Users/martinmac/Big_Data_Prak_Lani/data/kl/kl_total.csv",

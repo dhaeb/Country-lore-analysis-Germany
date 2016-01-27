@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.11.2/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="ol3_style.css" type="text/css"/>
+    <script src="http://openlayers.org/en/v3.11.2/build/ol.js" type="text/javascript"></script>
+    <script src="ol3_script.js" type="text/javascript"></script>
+    <script src="ol3_dialog.js" type="text/javascript"></script>
+    <script src="ol3_legende.js" type="text/javascript"></script>
+    <script src="ol3_main.js" type="text/javascript"></script>
+
+    <title>OpenLayers 3 example</title>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <div id="popup_org"></div>
+    <div id="attribution"></div>  
+    <div id="legende"></div>
+    <div>
+	 <label>Ueber Hoehe:</label>
+	 <input id="sliderHeight" type="range" min="0" max="1700" value="0" step="10" data-highlight="true" data-popup-enabled="true" />
+	 <!-- Zugspitze ist höchste mit 1652 -->
+    </div>
+    <div>
+	 <label>Stationen, mit groesser gleich Anzahl von Datensaetzen:</label>
+	 <input id="sliderCount" type="range" min="0" max="228" value="0" step="1" data-highlight="true" data-popup-enabled="true" />
+	 <!-- Dieser Wert is von CSV zu CSV unterschiedlich! -->
+    </div>
+    <div>
+	 <label>Station betrieben zwischen:</label>
+	 <input id="sliderLowerDate" type="range" min="1780" max="2010" value="1780" step="1" data-highlight="true" data-popup-enabled="true"/>
+	 <input id="sliderHigherDate" type="range" min="1780" max="2010" value="2010" step="1" data-highlight="true" data-popup-enabled="true"/>
+    </div>
+        <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
+  </body>
+</html>
