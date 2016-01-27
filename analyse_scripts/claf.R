@@ -2,6 +2,8 @@
 # Depedencies to run first: init-sparkr.R schemata.R
 #
 
+# most used dataset schema
+
 klSchema <- structType(
   structField("STATIONS_ID", "integer"),
   structField("MESS_DATUM", "date"),
@@ -22,6 +24,60 @@ klSchema <- structType(
   structField("SCHNEEHOEHE", "double")
 )
 
+# helper function to join two related years together (for some rules like if the november contains soil frost, the next year january should be more rainy)
+joinWithNextYear <- function(triggerTotalDf, observationTotalDf){ 
+  return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
+}
+
+# helper function to create the input data set for an clr analysis
+createClAnalysisDataset = function(folder, 
+				   triggerObject,
+				   observationObject,
+				   joinExpression,
+				   pathToMeta = "/home/dhaeb/dvl/data/dwd/kl/KL_Tageswerte_Beschreibung_Stationen4.txt",
+				   pathToData = "/home/dhaeb/dvl/data/dwd/kl/kl_total.csv",
+				   schema = klSchema,
+				   triggerAggOperation = SparkR::mean,
+				   observationAggOperation = SparkR::mean
+				   ){
+  return(list(
+    pathToMeta = pathToMeta,
+    pathToData = pathToData,
+    schema = schema,
+    triggerCols = triggerObject$triggerCols,
+    triggerTimeFilter = triggerObject$triggerTimeFilter,
+    triggerExpressionFilter = triggerObject$triggerExpressionFilter,
+    triggerAggOperation = triggerAggOperation,
+    observationCols = observationObject$observationCols,
+    observationTimeFilter = observationObject$observationTimeFilter,
+    observationExpression = observationObject$observationExpression,
+    observationAggOperation = observationAggOperation,
+    joinExpression = joinExpression,
+    folderName = folder
+  ))
+}
+
+clInputNovFrostJanNass <- createClAnalysisDataset(
+  "nov_frost_jan_nass",
+  list(
+    triggerCols = c("LUFTTEMP_AM_ERDB_MINIMUM"),
+    triggerTimeFilter = "MONTH = 11 and DAY BETWEEN 1 and 10",
+    triggerExpressionFilter = function(df){
+      return(df$LUFTTEMP_AM_ERDB_MINIMUM_AGG_MONTH_TRIG > 0)
+    }
+  ),
+  list(
+    observationCols = c("NIEDERSCHLAGSHOEHE"),
+    observationTimeFilter = "MONTH = 1",
+    observationExpressionFilter = function(df){
+      return(df$NIEDERSCHLAGSHOEHE_AGG_MONTH_OBS > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL_OBS)
+    }
+  ),
+  joinWithNextYear,
+  triggerAggOperation = SparkR::count,
+  observationAggOperation = SparkR::count
+)
+
 clInputOktoberWarmFein <- list(
   pathToMeta = "/home/dhaeb/dvl/data/dwd/kl/KL_Tageswerte_Beschreibung_Stationen4.txt",
   pathToData = "/home/dhaeb/dvl/data/dwd/kl/kl_total.csv",
@@ -38,9 +94,7 @@ clInputOktoberWarmFein <- list(
     return(df$LUFTTEMPERATUR_MINIMUM_AGG_MONTH_OBS < df$LUFTTEMPERATUR_MINIMUM_AGG_TOTAL_OBS)
   },
   observationAggOperation = SparkR::mean,
-  joinExpression = function(triggerTotalDf, observationTotalDf){ 
-    return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
-  },
+  joinExpression = joinWithNextYear,
   folderName = "oktober_warm_fein"
 )
 
