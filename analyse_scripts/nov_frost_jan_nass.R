@@ -92,7 +92,7 @@ soilDf <- read.df(sqlContext,
                 soilSchema, 
                 header="true", delimiter = ";")
 
-soilDf <- select(where(soilDf, soilDf[[frostColumnName]] != -999 | soilDf[[messTiefeColumnName]] != -999), 
+soilDf <- select(where(soilDf, soilDf[[frostColumnName]] != -999 & soilDf[[messTiefeColumnName]] != -999), 
                  soilDf[[frostColumnName]], soilDf[[messTiefeColumnName]], SparkR::alias(soilDf$"STATIONS_ID", "SOIL_SID"), soilDf$"MESS_DATUM")
 soilDf$M <- month(soilDf$MESS_DATUM)
 soilDf$Y <- year(soilDf$MESS_DATUM)
@@ -104,7 +104,7 @@ klDf <- read.df(sqlContext,
                         "com.databricks.spark.csv", 
                         klSchema, 
                         header="true", delimiter = ";")
-klDf <- select(where(klDf, klDf$"NIEDERSCHLAGSHOEHE" != -999 | klDf$"LUFTTEMP_AM_ERDB_MINIMUM" != -999), 
+klDf <- select(where(klDf, klDf$"NIEDERSCHLAGSHOEHE" != -999 & klDf$"LUFTTEMP_AM_ERDB_MINIMUM" != -999), 
                      "NIEDERSCHLAGSHOEHE", frostTempSpaltenName,"STATIONS_ID","MESS_DATUM")
 klDf$MONTH <- month(klDf$MESS_DATUM)
 klDf$YEAR <- year(klDf$MESS_DATUM)
