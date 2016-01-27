@@ -57,6 +57,27 @@ createClAnalysisDataset = function(folder,
   ))
 }
 
+clInputJanHellSommerHeiss <- createClAnalysisDataset(
+  "jan_hell_sommer_heiss",
+  list(
+    triggerCols = c("SONNENSCHEINDAUER", "SCHNEEHOEHE"),
+    triggerTimeFilter = "MONTH = 1",
+    triggerExpressionFilter = function(df){
+      return(df$SONNENSCHEINDAUER_AGG_MONTH_TRIG > df$SONNENSCHEINDAUER_AGG_TOTAL_TRIG & df$SCHNEEHOEHE_AGG_MONTH_TRIG > 0)
+    }
+  ),
+  list(
+    observationCols = c("LUFTTEMPERATUR"),
+    observationTimeFilter = "MONTH BETWEEN 6 AND 8",
+    observationExpressionFilter = function(df){
+      return(df$LUFTTEMPERATUR_AGG_MONTH_OBS > df$LUFTTEMPERATUR_AGG_TOTAL_OBS)
+    }
+  ),
+  function(triggerTotalDf, observationTotalDf){ 
+    return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == observationTotalDf$Y)
+  }
+)
+
 clInputNovFrostJanNass <- createClAnalysisDataset(
   "nov_frost_jan_nass",
   list(
