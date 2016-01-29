@@ -1,0 +1,4835 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.6359,
+                    51.2131
+                ]
+            },
+            "properties": {
+                "cAll": 54,
+                "cOverMean": 3096,
+                "rel": 0.670579277338812,
+                "Ort": "L\u00fcdenscheid (Zeppelin-Gymnasium)",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "444",
+                "von": "1939-12-31T23:00:00+0000",
+                "bis": "1995-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1909,
+                    53.3449
+                ]
+            },
+            "properties": {
+                "cAll": 31,
+                "cOverMean": 1219,
+                "rel": 0.637128329075098,
+                "Ort": "Emden-Nesserland",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "5",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "1997-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.2229,
+                    52.6711
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 3612,
+                "rel": 0.607225679837686,
+                "Ort": "Nienburg",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "25",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.0713,
+                    51.3773
+                ]
+            },
+            "properties": {
+                "cAll": 33,
+                "cOverMean": 186,
+                "rel": 0.602540248387731,
+                "Ort": "Arnsberg",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "218",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "1998-09-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.2516,
+                    53.1018
+                ]
+            },
+            "properties": {
+                "cAll": 35,
+                "cOverMean": 3790,
+                "rel": 0.635145250662583,
+                "Ort": "Oldenburg (A)",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "5",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "1989-09-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.7574,
+                    51.1998
+                ]
+            },
+            "properties": {
+                "cAll": 53,
+                "cOverMean": 1079,
+                "rel": 0.655844185928113,
+                "Ort": "D\u00fcsseldorf-S\u00fcdfriedhof",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "37",
+                "von": "1934-12-31T23:00:00+0000",
+                "bis": "1996-07-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.4128,
+                    51.7694
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 3101,
+                "rel": 0.658053821780064,
+                "Ort": "L\u00fcdinghausen",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "58",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "1995-09-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.4093,
+                    50.9104
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 2474,
+                "rel": 0.647538991825146,
+                "Ort": "J\u00fclich (Forsch.-Anlage)",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "91",
+                "von": "1975-12-31T23:00:00+0000",
+                "bis": "2008-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.1872,
+                    51.6334
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 4401,
+                "rel": 0.655501712950198,
+                "Ort": "Sassendorf, Bad-Ostinghausen",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "81",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "1980-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.5365,
+                    51.8293
+                ]
+            },
+            "properties": {
+                "cAll": 38,
+                "cOverMean": 554,
+                "rel": 0.596182155851232,
+                "Ort": "Bocholt-Liedern (Wasserwerk)",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "23",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2006-02-27T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.0168,
+                    49.2231
+                ]
+            },
+            "properties": {
+                "cAll": 38,
+                "cOverMean": 4339,
+                "rel": 0.617536372065303,
+                "Ort": "Saarbr\u00fccken-Sankt Johann",
+                "Bundesland": "Saarland",
+                "Lage": "W",
+                "Hoehe": "193",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2001-03-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.6676,
+                    49.4206
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 2080,
+                "rel": 0.619472606074236,
+                "Ort": "Heidelberg",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "110",
+                "von": "1934-12-31T23:00:00+0000",
+                "bis": "2012-09-10T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.0889,
+                    52.2817
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 769,
+                "rel": 0.655923468220856,
+                "Ort": "B\u00fcckeburg",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "68",
+                "von": "1978-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1467,
+                    50.7055
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 599,
+                "rel": 0.632800011154839,
+                "Ort": "Bonn-Friesdorf",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "62",
+                "von": "1932-09-30T23:00:00+0000",
+                "bis": "1999-02-28T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.3161,
+                    54.2989
+                ]
+            },
+            "properties": {
+                "cAll": 33,
+                "cOverMean": 1266,
+                "rel": 0.620858670060258,
+                "Ort": "Erfde",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "18",
+                "von": "1964-04-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.7152,
+                    53.8551
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 648,
+                "rel": 0.615013607902016,
+                "Ort": "Brande-H\u00f6rnerkirchen",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "9",
+                "von": "1963-04-30T23:00:00+0000",
+                "bis": "2006-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.6131,
+                    49.7326
+                ]
+            },
+            "properties": {
+                "cAll": 39,
+                "cOverMean": 5099,
+                "rel": 0.615337210273111,
+                "Ort": "Trier-Zewen",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "132",
+                "von": "1907-04-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9506,
+                    51.5003
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 1691,
+                "rel": 0.612385086295739,
+                "Ort": "G\u00f6ttingen",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "167",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.424,
+                    53.2657
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 3103,
+                "rel": 0.645091151906359,
+                "Ort": "L\u00fcneburg",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "11",
+                "von": "1947-04-30T22:00:00+0000",
+                "bis": "1997-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.9779,
+                    50.9895
+                ]
+            },
+            "properties": {
+                "cAll": 46,
+                "cOverMean": 2968,
+                "rel": 0.649738978612791,
+                "Ort": "K\u00f6ln-Stammheim",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "43",
+                "von": "1944-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.5526,
+                    50.1505
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 14311,
+                "rel": 0.585487471214371,
+                "Ort": "Hersdorf-Wei\u00dfenseifen",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "530",
+                "von": "1960-12-31T23:00:00+0000",
+                "bis": "2005-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.237,
+                    52.9335
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 44,
+                "rel": 0.555425650615643,
+                "Ort": "Gro\u00dfenkneten",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "44",
+                "von": "1971-02-28T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.7686,
+                    51.296
+                ]
+            },
+            "properties": {
+                "cAll": 45,
+                "cOverMean": 1078,
+                "rel": 0.580075291720999,
+                "Ort": "D\u00fcsseldorf",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "37",
+                "von": "1969-06-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.6752,
+                    53.5316
+                ]
+            },
+            "properties": {
+                "cAll": 35,
+                "cOverMean": 2464,
+                "rel": 0.605701776944429,
+                "Ort": "Jork",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "1",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1990-10-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.6021,
+                    51.7234
+                ]
+            },
+            "properties": {
+                "cAll": 77,
+                "cOverMean": 656,
+                "rel": 0.599758698183881,
+                "Ort": "Braunlage",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "607",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4465,
+                    52.2914
+                ]
+            },
+            "properties": {
+                "cAll": 54,
+                "cOverMean": 662,
+                "rel": 0.615741912607475,
+                "Ort": "Braunschweig",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "81",
+                "von": "1960-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.347,
+                    51.7904
+                ]
+            },
+            "properties": {
+                "cAll": 65,
+                "cOverMean": 863,
+                "rel": 0.620170437816422,
+                "Ort": "Clausthal-Zellerfeld",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "585",
+                "von": "1889-12-31T23:00:00+0000",
+                "bis": "2012-04-03T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9664,
+                    53.5468
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 1987,
+                "rel": 0.625903776733449,
+                "Ort": "Hamburg-Sankt Pauli",
+                "Bundesland": "Hamburg",
+                "Lage": "N",
+                "Hoehe": "35",
+                "von": "1955-12-31T23:00:00+0000",
+                "bis": "2000-02-28T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.3088,
+                    52.5644
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 430,
+                "rel": 0.668488891714825,
+                "Ort": "Berlin-Tegel",
+                "Bundesland": "Berlin",
+                "Lage": "O",
+                "Hoehe": "36",
+                "von": "1962-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.1081,
+                    51.1056
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 5568,
+                "rel": 0.658308799766912,
+                "Ort": "Wildungen, Bad",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "310",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2001-03-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.6779,
+                    52.4644
+                ]
+            },
+            "properties": {
+                "cAll": 75,
+                "cOverMean": 2014,
+                "rel": 0.62065175845456,
+                "Ort": "Hannover",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "55",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.8776,
+                    53.7331
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 4039,
+                "rel": 0.549049592783761,
+                "Ort": "Quickborn",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "13",
+                "von": "1974-11-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.7463,
+                    52.7216
+                ]
+            },
+            "properties": {
+                "cAll": 52,
+                "cOverMean": 3044,
+                "rel": 0.635751492814432,
+                "Ort": "L\u00f6ningen",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "22",
+                "von": "1945-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9849,
+                    51.2801
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 4765,
+                "rel": 0.538604725968603,
+                "Ort": "Sooden-Allendorf, Bad",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "199",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1980-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1519,
+                    53.7123
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 3631,
+                "rel": 0.65384553161322,
+                "Ort": "Norderney",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "11",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.8072,
+                    52.9037
+                ]
+            },
+            "properties": {
+                "cAll": 53,
+                "cOverMean": 3552,
+                "rel": 0.65025437642085,
+                "Ort": "Neuruppin",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "38",
+                "von": "1960-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.6183,
+                    51.7986
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 722,
+                "rel": 0.595951173339001,
+                "Ort": "Brocken",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "1134",
+                "von": "1947-09-10T22:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.4424,
+                    51.2963
+                ]
+            },
+            "properties": {
+                "cAll": 63,
+                "cOverMean": 2532,
+                "rel": 0.62606471524874,
+                "Ort": "Kassel",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "231",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2013-10-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9967,
+                    49.107
+                ]
+            },
+            "properties": {
+                "cAll": 39,
+                "cOverMean": 377,
+                "rel": 0.681297010253996,
+                "Ort": "Bergzabern, Bad",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "252",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.6206,
+                    47.8062
+                ]
+            },
+            "properties": {
+                "cAll": 46,
+                "cOverMean": 4094,
+                "rel": 0.613902494465124,
+                "Ort": "Weingarten, Kr. Ravensburg",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "440",
+                "von": "1945-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.4021,
+                    52.4675
+                ]
+            },
+            "properties": {
+                "cAll": 44,
+                "cOverMean": 433,
+                "rel": 0.613048506521994,
+                "Ort": "Berlin-Tempelhof",
+                "Bundesland": "Berlin",
+                "Lage": "O",
+                "Hoehe": "48",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.467,
+                    53.4621
+                ]
+            },
+            "properties": {
+                "cAll": 33,
+                "cOverMean": 243,
+                "rel": 0.573659036415178,
+                "Ort": "Aurich",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "4",
+                "von": "1958-08-31T23:00:00+0000",
+                "bis": "2006-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9022,
+                    53.0643
+                ]
+            },
+            "properties": {
+                "cAll": 45,
+                "cOverMean": 1503,
+                "rel": 0.543079025046472,
+                "Ort": "Friesoythe-Altenoythe",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "6",
+                "von": "1947-01-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.3602,
+                    50.2599
+                ]
+            },
+            "properties": {
+                "cAll": 31,
+                "cOverMean": 5300,
+                "rel": 0.638767551925364,
+                "Ort": "Waldems-Reinborn",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "380",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.8388,
+                    51.7855
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 3028,
+                "rel": 0.598868561676676,
+                "Ort": "Lippspringe, Bad",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "157",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.4295,
+                    53.797
+                ]
+            },
+            "properties": {
+                "cAll": 49,
+                "cOverMean": 1667,
+                "rel": 0.636045785323789,
+                "Ort": "Gl\u00fcckstadt",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "1",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2006-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.3123,
+                    51.3933
+                ]
+            },
+            "properties": {
+                "cAll": 58,
+                "cOverMean": 2925,
+                "rel": 0.583766227096462,
+                "Ort": "Leinefelde",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "356",
+                "von": "1956-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.9907,
+                    53.0316
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 164,
+                "rel": 0.605197759764365,
+                "Ort": "Angerm\u00fcnde",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "54",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.5022,
+                    52.6309
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 400,
+                "rel": 0.644041443310712,
+                "Ort": "Berlin-Buch",
+                "Bundesland": "Berlin",
+                "Lage": "O",
+                "Hoehe": "60",
+                "von": "1960-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7546,
+                    50.0946
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 3776,
+                "rel": 0.621276543882438,
+                "Ort": "Offenbach/M. (Stadt)",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "110",
+                "von": "1957-10-31T23:00:00+0000",
+                "bis": "1995-10-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7058,
+                    53.8713
+                ]
+            },
+            "properties": {
+                "cAll": 69,
+                "cOverMean": 891,
+                "rel": 0.625069506358161,
+                "Ort": "Cuxhaven",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "5",
+                "von": "1945-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.892,
+                    54.175
+                ]
+            },
+            "properties": {
+                "cAll": 63,
+                "cOverMean": 2115,
+                "rel": 0.679238009028215,
+                "Ort": "Helgoland",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "4",
+                "von": "1952-04-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.0095,
+                    53.9701
+                ]
+            },
+            "properties": {
+                "cAll": 46,
+                "cOverMean": 2122,
+                "rel": 0.636636345787133,
+                "Ort": "Helse, Kr. Dithmarschen",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "2",
+                "von": "1951-03-31T23:00:00+0000",
+                "bis": "2002-05-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.5268,
+                    50.9198
+                ]
+            },
+            "properties": {
+                "cAll": 51,
+                "cOverMean": 480,
+                "rel": 0.668179985153433,
+                "Ort": "Biedenkopf",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "349",
+                "von": "1944-12-31T23:00:00+0000",
+                "bis": "2006-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.3943,
+                    51.6334
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 3031,
+                "rel": 0.599367692550955,
+                "Ort": "Lippstadt-B\u00f6kenf\u00f6rde",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "92",
+                "von": "1980-11-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1575,
+                    50.8646
+                ]
+            },
+            "properties": {
+                "cAll": 57,
+                "cOverMean": 2667,
+                "rel": 0.61779837889166,
+                "Ort": "K\u00f6ln-Bonn",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "92",
+                "von": "1957-08-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1666,
+                    47.6185
+                ]
+            },
+            "properties": {
+                "cAll": 48,
+                "cOverMean": 3679,
+                "rel": 0.578556629425821,
+                "Ort": "Kiefersfelden-Gach",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "518",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.7297,
+                    52.8911
+                ]
+            },
+            "properties": {
+                "cAll": 38,
+                "cOverMean": 4642,
+                "rel": 0.703330365993442,
+                "Ort": "Seehausen",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "21",
+                "von": "1976-09-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.7931,
+                    52.9604
+                ]
+            },
+            "properties": {
+                "cAll": 67,
+                "cOverMean": 4745,
+                "rel": 0.631481175746992,
+                "Ort": "Soltau",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "76",
+                "von": "1947-07-20T22:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9428,
+                    50.4973
+                ]
+            },
+            "properties": {
+                "cAll": 72,
+                "cOverMean": 5371,
+                "rel": 0.619422799685252,
+                "Ort": "Wasserkuppe",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "921",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.2396,
+                    51.4348
+                ]
+            },
+            "properties": {
+                "cAll": 43,
+                "cOverMean": 2932,
+                "rel": 0.653065937319475,
+                "Ort": "Leipzig/Halle",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "131",
+                "von": "1972-04-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7412,
+                    48.9059
+                ]
+            },
+            "properties": {
+                "cAll": 44,
+                "cOverMean": 3924,
+                "rel": 0.615356331138611,
+                "Ort": "Pforzheim-Eutingen",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "246",
+                "von": "1936-12-31T23:00:00+0000",
+                "bis": "2005-08-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.4469,
+                    50.2218
+                ]
+            },
+            "properties": {
+                "cAll": 75,
+                "cOverMean": 2601,
+                "rel": 0.57490699517834,
+                "Ort": "Kleiner Feldberg/Taunus",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "826",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.0534,
+                    52.2553
+                ]
+            },
+            "properties": {
+                "cAll": 59,
+                "cOverMean": 3815,
+                "rel": 0.636351608845713,
+                "Ort": "Osnabr\u00fcck",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "95",
+                "von": "1952-01-31T23:00:00+0000",
+                "bis": "2010-11-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.9676,
+                    51.404
+                ]
+            },
+            "properties": {
+                "cAll": 75,
+                "cOverMean": 1303,
+                "rel": 0.57516167016567,
+                "Ort": "Essen-Bredeney",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "150",
+                "von": "1934-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.6878,
+                    53.3911
+                ]
+            },
+            "properties": {
+                "cAll": 50,
+                "cOverMean": 591,
+                "rel": 0.681927993720591,
+                "Ort": "Boizenburg",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "45",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.3641,
+                    49.0382
+                ]
+            },
+            "properties": {
+                "cAll": 69,
+                "cOverMean": 2522,
+                "rel": 0.634237143937615,
+                "Ort": "Karlsruhe",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "112",
+                "von": "1875-12-31T23:00:00+0000",
+                "bis": "2008-10-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.3941,
+                    52.5129
+                ]
+            },
+            "properties": {
+                "cAll": 46,
+                "cOverMean": 1544,
+                "rel": 0.622014686762569,
+                "Ort": "Gardelegen",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "47",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.5761,
+                    53.5332
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 701,
+                "rel": 0.629933991254718,
+                "Ort": "Bremerhaven",
+                "Bundesland": "Bremen",
+                "Lage": "N",
+                "Hoehe": "7",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.0941,
+                    50.7827
+                ]
+            },
+            "properties": {
+                "cAll": 75,
+                "cOverMean": 3,
+                "rel": 0.634053327917277,
+                "Ort": "Aachen",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "202",
+                "von": "1890-12-31T23:00:00+0000",
+                "bis": "2011-03-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.118,
+                    52.2085
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 3015,
+                "rel": 0.639975984813712,
+                "Ort": "Lindenberg",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "98",
+                "von": "1906-03-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.6865,
+                    52.1264
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 2147,
+                "rel": 0.598278345805529,
+                "Ort": "Herford",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "77",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2007-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.402,
+                    54.159
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 3955,
+                "rel": 0.650324823888091,
+                "Ort": "Pl\u00f6n (See)",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "24",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "1997-01-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.4891,
+                    51.1803
+                ]
+            },
+            "properties": {
+                "cAll": 60,
+                "cOverMean": 2483,
+                "rel": 0.582805746455231,
+                "Ort": "Kahler Asten",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "839",
+                "von": "1954-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.5827,
+                    52.1029
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 3126,
+                "rel": 0.65035245385145,
+                "Ort": "Magdeburg",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "76",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.583,
+                    50.9251
+                ]
+            },
+            "properties": {
+                "cAll": 102,
+                "cOverMean": 2444,
+                "rel": 0.531675340430237,
+                "Ort": "Jena (Sternwarte)",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "155",
+                "von": "1823-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.6703,
+                    53.5788
+                ]
+            },
+            "properties": {
+                "cAll": 57,
+                "cOverMean": 619,
+                "rel": 0.624593139539822,
+                "Ort": "Borkum-S\u00fcderstra\u00dfe",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "12",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2006-02-27T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.6915,
+                    53.8773
+                ]
+            },
+            "properties": {
+                "cAll": 35,
+                "cOverMean": 3085,
+                "rel": 0.642775992817634,
+                "Ort": "L\u00fcbeck",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "15",
+                "von": "1950-02-28T23:00:00+0000",
+                "bis": "1985-02-27T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.6445,
+                    51.8892
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 5629,
+                "rel": 0.645022605953863,
+                "Ort": "Wittenberg",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "105",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.3081,
+                    52.5181
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 3023,
+                "rel": 0.595789369439272,
+                "Ort": "Lingen",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "22",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.4125,
+                    55.011
+                ]
+            },
+            "properties": {
+                "cAll": 75,
+                "cOverMean": 3032,
+                "rel": 0.640857410774978,
+                "Ort": "List auf Sylt",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "26",
+                "von": "1936-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9602,
+                    50.662
+                ]
+            },
+            "properties": {
+                "cAll": 52,
+                "cOverMean": 3167,
+                "rel": 0.606508926218642,
+                "Ort": "Marienberg, Bad",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "547",
+                "von": "1962-11-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.8892,
+                    53.9619
+                ]
+            },
+            "properties": {
+                "cAll": 53,
+                "cOverMean": 5078,
+                "rel": 0.682838193130474,
+                "Ort": "Travem\u00fcnde",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "2",
+                "von": "1939-12-31T23:00:00+0000",
+                "bis": "2001-09-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.603,
+                    54.3279
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 4393,
+                "rel": 0.643125507889313,
+                "Ort": "Sankt Peter-Ording",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "5",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.0664,
+                    49.9186
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 450,
+                "rel": 0.625686809393908,
+                "Ort": "Bernkastel-Kues",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "120",
+                "von": "1944-12-31T23:00:00+0000",
+                "bis": "2012-12-02T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9881,
+                    53.6332
+                ]
+            },
+            "properties": {
+                "cAll": 74,
+                "cOverMean": 1975,
+                "rel": 0.64197722515655,
+                "Ort": "Hamburg-Fuhlsb\u00fcttel",
+                "Bundesland": "Hamburg",
+                "Lage": "N",
+                "Hoehe": "11",
+                "von": "1890-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7521,
+                    52.1042
+                ]
+            },
+            "properties": {
+                "cAll": 74,
+                "cOverMean": 4371,
+                "rel": 0.586731000787677,
+                "Ort": "Salzuflen, Bad",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "135",
+                "von": "1934-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.8871,
+                    51.8189
+                ]
+            },
+            "properties": {
+                "cAll": 38,
+                "cOverMean": 1172,
+                "rel": 0.568855617707129,
+                "Ort": "Einbeck",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "123",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1989-11-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1455,
+                    50.6266
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 2503,
+                "rel": 0.643358795413061,
+                "Ort": "Kaltennordheim",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "487",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2003-03-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.0792,
+                    50.2241
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 2597,
+                "rel": 0.643392785106126,
+                "Ort": "Kissingen, Bad",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "282",
+                "von": "1945-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.0853,
+                    50.5346
+                ]
+            },
+            "properties": {
+                "cAll": 65,
+                "cOverMean": 3490,
+                "rel": 0.62710650323648,
+                "Ort": "Neuenahr, Bad-Ahrweiler",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "111",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.0605,
+                    50.4116
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 3004,
+                "rel": 0.646388505648026,
+                "Ort": "Limburg/Lahn-Offheim",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "185",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "1999-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.6988,
+                    53.8025
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 3086,
+                "rel": 0.57193522995221,
+                "Ort": "L\u00fcbeck-Blankensee",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "16",
+                "von": "1985-02-28T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.0928,
+                    51.296
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 3811,
+                "rel": 0.678568040387266,
+                "Ort": "Oschatz",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "150",
+                "von": "1977-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.292,
+                    51.3745
+                ]
+            },
+            "properties": {
+                "cAll": 57,
+                "cOverMean": 198,
+                "rel": 0.629051210476629,
+                "Ort": "Artern",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "164",
+                "von": "1953-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.1828,
+                    50.3746
+                ]
+            },
+            "properties": {
+                "cAll": 46,
+                "cOverMean": 4752,
+                "rel": 0.638545723995754,
+                "Ort": "Sonneberg-Neufang",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "626",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2008-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.1374,
+                    52.9724
+                ]
+            },
+            "properties": {
+                "cAll": 60,
+                "cOverMean": 3093,
+                "rel": 0.618260287352385,
+                "Ort": "L\u00fcchow",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "17",
+                "von": "1954-11-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.2391,
+                    48.2953
+                ]
+            },
+            "properties": {
+                "cAll": 43,
+                "cOverMean": 5664,
+                "rel": 0.504756397697675,
+                "Ort": "Wolfach",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "291",
+                "von": "1957-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7985,
+                    53.0445
+                ]
+            },
+            "properties": {
+                "cAll": 75,
+                "cOverMean": 691,
+                "rel": 0.614974546984792,
+                "Ort": "Bremen",
+                "Bundesland": "Bremen",
+                "Lage": "N",
+                "Hoehe": "4",
+                "von": "1889-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.8806,
+                    53.5322
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 2456,
+                "rel": 0.611108465504017,
+                "Ort": "Jever",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "7",
+                "von": "1939-12-31T23:00:00+0000",
+                "bis": "2005-08-25T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.6439,
+                    50.6017
+                ]
+            },
+            "properties": {
+                "cAll": 73,
+                "cOverMean": 1639,
+                "rel": 0.622153855025242,
+                "Ort": "Gie\u00dfen/Wettenberg",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "203",
+                "von": "1938-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.1405,
+                    49.357
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 3575,
+                "rel": 0.612604856176885,
+                "Ort": "Neustadt/Weinstra\u00dfe",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "163",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1982-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.4056,
+                    54.0967
+                ]
+            },
+            "properties": {
+                "cAll": 37,
+                "cOverMean": 1757,
+                "rel": 0.640077624135527,
+                "Ort": "Greifswald",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "2",
+                "von": "1898-02-28T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.3302,
+                    48.9726
+                ]
+            },
+            "properties": {
+                "cAll": 44,
+                "cOverMean": 4177,
+                "rel": 0.571502878354153,
+                "Ort": "Rheinstetten",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "116",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.4883,
+                    49.8747
+                ]
+            },
+            "properties": {
+                "cAll": 39,
+                "cOverMean": 502,
+                "rel": 0.616815757528387,
+                "Ort": "Bischbrunn",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "412",
+                "von": "1967-07-31T23:00:00+0000",
+                "bis": "2006-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.13,
+                    50.4819
+                ]
+            },
+            "properties": {
+                "cAll": 42,
+                "cOverMean": 3946,
+                "rel": 0.535890461190882,
+                "Ort": "Plauen",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "386",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.5271,
+                    54.6928
+                ]
+            },
+            "properties": {
+                "cAll": 56,
+                "cOverMean": 5732,
+                "rel": 0.632860046541628,
+                "Ort": "Wrixum/F\u00f6hr",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "8",
+                "von": "1887-06-30T23:00:00+0000",
+                "bis": "2003-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.2801,
+                    49.0851
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 1833,
+                "rel": 0.606370250598054,
+                "Ort": "Grosser Falkenstein",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "1307",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "1982-10-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.9514,
+                    54.7903
+                ]
+            },
+            "properties": {
+                "cAll": 40,
+                "cOverMean": 2907,
+                "rel": 0.596423333041629,
+                "Ort": "Leck",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "7",
+                "von": "1974-10-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.5574,
+                    53.761
+                ]
+            },
+            "properties": {
+                "cAll": 57,
+                "cOverMean": 5009,
+                "rel": 0.599154998590227,
+                "Ort": "Teterow",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "38",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.5287,
+                    52.9413
+                ]
+            },
+            "properties": {
+                "cAll": 49,
+                "cOverMean": 5146,
+                "rel": 0.603031045175383,
+                "Ort": "Uelzen",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "50",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.6744,
+                    51.1197
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 5282,
+                "rel": 0.544935985979097,
+                "Ort": "Wahnsdorf bei Dresden",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "246",
+                "von": "1916-12-31T23:00:00+0000",
+                "bis": "1974-06-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.1232,
+                    52.5176
+                ]
+            },
+            "properties": {
+                "cAll": 51,
+                "cOverMean": 3376,
+                "rel": 0.64769440948077,
+                "Ort": "M\u00fcncheberg",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "63",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.6353,
+                    48.0908
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 5250,
+                "rel": 0.554879393230041,
+                "Ort": "Vogtsburg-Oberrotweil",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "223",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2003-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.7686,
+                    51.8454
+                ]
+            },
+            "properties": {
+                "cAll": 45,
+                "cOverMean": 5490,
+                "rel": 0.613867193270356,
+                "Ort": "Wernigerode",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "234",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.9608,
+                    50.9829
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 1270,
+                "rel": 0.615646399452758,
+                "Ort": "Erfurt-Weimar",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "316",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9577,
+                    49.7703
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 5705,
+                "rel": 0.62937863412298,
+                "Ort": "W\u00fcrzburg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "268",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.7378,
+                    50.8519
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 2171,
+                "rel": 0.600023191036545,
+                "Ort": "Hersfeld, Bad",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "272",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.5541,
+                    49.509
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 5906,
+                "rel": 0.582514681408262,
+                "Ort": "Mannheim",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "96",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.0805,
+                    54.1802
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 4271,
+                "rel": 0.659356949405389,
+                "Ort": "Rostock-Warnem\u00fcnde",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "4",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.2137,
+                    49.0007
+                ]
+            },
+            "properties": {
+                "cAll": 56,
+                "cOverMean": 5802,
+                "rel": 0.624425339558669,
+                "Ort": "Zwieselberg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "615",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2003-09-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.1562,
+                    47.7713
+                ]
+            },
+            "properties": {
+                "cAll": 50,
+                "cOverMean": 5138,
+                "rel": 0.622906428499387,
+                "Ort": "\u00dcberlingen/Bodensee",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "446",
+                "von": "1945-12-31T23:00:00+0000",
+                "bis": "2003-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.2092,
+                    48.7137
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 4933,
+                "rel": 0.46396855065482,
+                "Ort": "Stuttgart-Hohenheim",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "401",
+                "von": "1899-12-31T23:00:00+0000",
+                "bis": "1977-06-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.6384,
+                    47.8063
+                ]
+            },
+            "properties": {
+                "cAll": 31,
+                "cOverMean": 259,
+                "rel": 0.3947150885982,
+                "Ort": "M\u00fcllheim",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "273",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.7693,
+                    50.6546
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 4501,
+                "rel": 0.638935856794951,
+                "Ort": "Schm\u00fccke",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "937",
+                "von": "1947-10-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.791,
+                    50.7119
+                ]
+            },
+            "properties": {
+                "cAll": 41,
+                "cOverMean": 1327,
+                "rel": 0.544781812734888,
+                "Ort": "Weilerswist-Lommersum",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "146",
+                "von": "1936-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.1908,
+                    54.0028
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 596,
+                "rel": 0.606406445469105,
+                "Ort": "Boltenhagen",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "15",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.3771,
+                    50.5612
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 3231,
+                "rel": 0.676166737522629,
+                "Ort": "Meiningen",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "450",
+                "von": "1978-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.5701,
+                    51.9
+                ]
+            },
+            "properties": {
+                "cAll": 48,
+                "cOverMean": 2039,
+                "rel": 0.574854292531027,
+                "Ort": "Harzburg, Bad",
+                "Bundesland": "Niedersachsen",
+                "Lage": "N",
+                "Hoehe": "201",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.3101,
+                    52.4578
+                ]
+            },
+            "properties": {
+                "cAll": 65,
+                "cOverMean": 403,
+                "rel": 0.622710385538905,
+                "Ort": "Berlin-Dahlem (FU)",
+                "Bundesland": "Berlin",
+                "Lage": "O",
+                "Hoehe": "51",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.5486,
+                    54.5275
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 4466,
+                "rel": 0.60574204945645,
+                "Ort": "Schleswig",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "43",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1289,
+                    50.8813
+                ]
+            },
+            "properties": {
+                "cAll": 63,
+                "cOverMean": 1612,
+                "rel": 0.589599917738254,
+                "Ort": "Gera-Leumnitz",
+                "Bundesland": "Th\u00fcringen",
+                "Lage": "O",
+                "Hoehe": "311",
+                "von": "1951-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.5906,
+                    51.9494
+                ]
+            },
+            "properties": {
+                "cAll": 52,
+                "cOverMean": 3404,
+                "rel": 0.493600440053449,
+                "Ort": "M\u00fcnster",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "62",
+                "von": "1890-12-31T23:00:00+0000",
+                "bis": "1991-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.968,
+                    50.3067
+                ]
+            },
+            "properties": {
+                "cAll": 60,
+                "cOverMean": 867,
+                "rel": 0.569958756488173,
+                "Ort": "Lautertal-Oberlauter",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "345",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.1228,
+                    50.4927
+                ]
+            },
+            "properties": {
+                "cAll": 62,
+                "cOverMean": 4560,
+                "rel": 0.615397254328533,
+                "Ort": "Schotten",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "265",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.5215,
+                    50.026
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 1420,
+                "rel": 0.618982041242229,
+                "Ort": "Frankfurt/Main",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "100",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.4641,
+                    48.9293
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 5306,
+                "rel": 0.634229224393553,
+                "Ort": "Waldh\u00e4user (National Park)",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "940",
+                "von": "1971-11-30T23:00:00+0000",
+                "bis": "2003-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.8009,
+                    50.1015
+                ]
+            },
+            "properties": {
+                "cAll": 53,
+                "cOverMean": 3155,
+                "rel": 0.596359551544656,
+                "Ort": "Manderscheid-Sonnenhof",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "413",
+                "von": "1961-10-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.871,
+                    49.8502
+                ]
+            },
+            "properties": {
+                "cAll": 65,
+                "cOverMean": 4301,
+                "rel": 0.671595382783247,
+                "Ort": "Kreuznach, Bad",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "102",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.7549,
+                    48.1054
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 2638,
+                "rel": 0.57085893891144,
+                "Ort": "Klippeneck",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "973",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.604,
+                    49.2504
+                ]
+            },
+            "properties": {
+                "cAll": 37,
+                "cOverMean": 851,
+                "rel": 0.547439070827035,
+                "Ort": "Pemfling-Pitzling",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "389",
+                "von": "1948-01-31T23:00:00+0000",
+                "bis": "1996-04-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.2697,
+                    51.4789
+                ]
+            },
+            "properties": {
+                "cAll": 42,
+                "cOverMean": 555,
+                "rel": 0.573075304787825,
+                "Ort": "Bochum",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "101",
+                "von": "1939-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.9535,
+                    50.4283
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 1358,
+                "rel": 0.589865937219081,
+                "Ort": "Fichtelberg",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "1213",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.4694,
+                    48.5779
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 3879,
+                "rel": 0.65070069116563,
+                "Ort": "Passau-Oberhaus",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "409",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "1997-01-02T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.9679,
+                    49.5617
+                ]
+            },
+            "properties": {
+                "cAll": 54,
+                "cOverMean": 330,
+                "rel": 0.60944143539601,
+                "Ort": "Beerfelden",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "450",
+                "von": "1936-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9549,
+                    49.9859
+                ]
+            },
+            "properties": {
+                "cAll": 80,
+                "cOverMean": 1580,
+                "rel": 0.58069250360402,
+                "Ort": "Geisenheim",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "110",
+                "von": "1934-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.2296,
+                    49.2178
+                ]
+            },
+            "properties": {
+                "cAll": 59,
+                "cOverMean": 5654,
+                "rel": 0.660785402908111,
+                "Ort": "W\u00f6rnitz-Bottenweiler",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "464",
+                "von": "1948-06-30T22:00:00+0000",
+                "bis": "2007-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9949,
+                    50.1691
+                ]
+            },
+            "properties": {
+                "cAll": 39,
+                "cOverMean": 2092,
+                "rel": 0.583596271035181,
+                "Ort": "Heidenrod-Mappershain",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "496",
+                "von": "1952-01-31T23:00:00+0000",
+                "bis": "1990-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.3872,
+                    53.6425
+                ]
+            },
+            "properties": {
+                "cAll": 72,
+                "cOverMean": 4625,
+                "rel": 0.6002538707962,
+                "Ort": "Schwerin",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "59",
+                "von": "1889-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.8344,
+                    48.0233
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 1443,
+                "rel": 0.546072534394479,
+                "Ort": "Freiburg",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "236",
+                "von": "1949-04-30T22:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.6582,
+                    49.7479
+                ]
+            },
+            "properties": {
+                "cAll": 67,
+                "cOverMean": 5100,
+                "rel": 0.607719515093667,
+                "Ort": "Trier-Petrisberg",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "265",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.874,
+                    47.7238
+                ]
+            },
+            "properties": {
+                "cAll": 58,
+                "cOverMean": 4125,
+                "rel": 0.633221753426517,
+                "Ort": "Reichenhall, Bad",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "470",
+                "von": "1944-12-31T23:00:00+0000",
+                "bis": "2006-11-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.0038,
+                    47.8749
+                ]
+            },
+            "properties": {
+                "cAll": 69,
+                "cOverMean": 1346,
+                "rel": 0.539530615863049,
+                "Ort": "Feldberg/Schwarzwald",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "1490",
+                "von": "1944-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.7516,
+                    50.7314
+                ]
+            },
+            "properties": {
+                "cAll": 35,
+                "cOverMean": 5779,
+                "rel": 0.635027086293925,
+                "Ort": "Zinnwald-Georgenfeld",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "877",
+                "von": "1970-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1727,
+                    50.1969
+                ]
+            },
+            "properties": {
+                "cAll": 51,
+                "cOverMean": 4664,
+                "rel": 0.596674709170849,
+                "Ort": "Selb/Oberfranken-Wildenau",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "611",
+                "von": "1940-12-31T22:00:00+0000",
+                "bis": "2000-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.8761,
+                    50.3122
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 2261,
+                "rel": 0.598732266407063,
+                "Ort": "Hof",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "565",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.3168,
+                    51.776
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 880,
+                "rel": 0.629078707255498,
+                "Ort": "Cottbus",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "69",
+                "von": "1886-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.7543,
+                    51.128
+                ]
+            },
+            "properties": {
+                "cAll": 48,
+                "cOverMean": 1048,
+                "rel": 0.583005067666878,
+                "Ort": "Dresden-Klotzsche",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "227",
+                "von": "1959-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.0929,
+                    54.3378
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 2565,
+                "rel": 0.623871867250547,
+                "Ort": "Kiel-Kronshagen",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "17",
+                "von": "1939-12-31T23:00:00+0000",
+                "bis": "1988-09-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9939,
+                    48.6703
+                ]
+            },
+            "properties": {
+                "cAll": 57,
+                "cOverMean": 4169,
+                "rel": 0.560561600598302,
+                "Ort": "Rheinau-Memprechtshofen",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "131",
+                "von": "1957-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.1367,
+                    51.652
+                ]
+            },
+            "properties": {
+                "cAll": 33,
+                "cOverMean": 2044,
+                "rel": 0.631871707552261,
+                "Ort": "Harzgerode",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "404",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.5066,
+                    48.8254
+                ]
+            },
+            "properties": {
+                "cAll": 42,
+                "cOverMean": 3621,
+                "rel": 0.553451289253007,
+                "Ort": "Reimlingen",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "435",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.4343,
+                    54.6792
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 183,
+                "rel": 0.627445448081401,
+                "Ort": "Arkona",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "42",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.9499,
+                    51.5138
+                ]
+            },
+            "properties": {
+                "cAll": 37,
+                "cOverMean": 1957,
+                "rel": 0.628939500728986,
+                "Ort": "Halle-Kr\u00f6llwitz",
+                "Bundesland": "Sachsen-Anhalt",
+                "Lage": "O",
+                "Hoehe": "93",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-03-21T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.0515,
+                    48.5198
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 5120,
+                "rel": 0.568017041927536,
+                "Ort": "T\u00fcbingen",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "370",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "1982-04-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.0073,
+                    49.6497
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 1279,
+                "rel": 0.648491255109047,
+                "Ort": "M\u00f6hrendorf-Kleinseebach",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "268",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.9671,
+                    49.9195
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 4411,
+                "rel": 0.583418322504786,
+                "Ort": "Schaafheim-Schlierbach",
+                "Bundesland": "Hessen",
+                "Lage": "W",
+                "Hoehe": "155",
+                "von": "1979-11-30T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.872,
+                    50.7913
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 853,
+                "rel": 0.596657334585189,
+                "Ort": "Chemnitz",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "418",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.5197,
+                    49.9667
+                ]
+            },
+            "properties": {
+                "cAll": 65,
+                "cOverMean": 320,
+                "rel": 0.586294207398437,
+                "Ort": "Heinersreuth-Vollhof",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "350",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.5747,
+                    51.6451
+                ]
+            },
+            "properties": {
+                "cAll": 49,
+                "cOverMean": 1001,
+                "rel": 0.633874909363488,
+                "Ort": "Doberlug-Kirchhain",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "97",
+                "von": "1948-06-30T22:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.4795,
+                    47.6452
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 1490,
+                "rel": 0.518247647462521,
+                "Ort": "Friedrichshafen",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "394",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "1980-11-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.0541,
+                    49.7619
+                ]
+            },
+            "properties": {
+                "cAll": 62,
+                "cOverMean": 953,
+                "rel": 0.599908446846675,
+                "Ort": "Deuselbach",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "481",
+                "von": "1950-07-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.6672,
+                    47.9699
+                ]
+            },
+            "properties": {
+                "cAll": 42,
+                "cOverMean": 238,
+                "rel": 0.455734513523972,
+                "Ort": "Aulendorf-Spiegler",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "560",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2004-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.4696,
+                    47.6752
+                ]
+            },
+            "properties": {
+                "cAll": 44,
+                "cOverMean": 5941,
+                "rel": 0.507574402955541,
+                "Ort": "Reit im Winkl",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "685",
+                "von": "1944-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.5175,
+                    49.207
+                ]
+            },
+            "properties": {
+                "cAll": 65,
+                "cOverMean": 3761,
+                "rel": 0.598639692391328,
+                "Ort": "\u00d6hringen",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "276",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.9187,
+                    48.8548
+                ]
+            },
+            "properties": {
+                "cAll": 74,
+                "cOverMean": 3271,
+                "rel": 0.633914521177761,
+                "Ort": "Metten",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "313",
+                "von": "1940-12-31T22:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1033,
+                    53.606
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 1694,
+                "rel": 0.629542821618398,
+                "Ort": "Goldberg",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "58",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.4163,
+                    48.251
+                ]
+            },
+            "properties": {
+                "cAll": 40,
+                "cOverMean": 2761,
+                "rel": 0.445302511433596,
+                "Ort": "Krumbach-Edenhausen",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "520",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1990-10-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.7936,
+                    47.5627
+                ]
+            },
+            "properties": {
+                "cAll": 57,
+                "cOverMean": 4175,
+                "rel": 0.510865602582438,
+                "Ort": "Rheinfelden",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "287",
+                "von": "1953-08-31T23:00:00+0000",
+                "bis": "2014-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.477,
+                    54.3643
+                ]
+            },
+            "properties": {
+                "cAll": 35,
+                "cOverMean": 4024,
+                "rel": 0.564125408470539,
+                "Ort": "Putbus",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "40",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.9506,
+                    51.1622
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 1684,
+                "rel": 0.611215293365011,
+                "Ort": "G\u00f6rlitz",
+                "Bundesland": "Sachsen",
+                "Lage": "O",
+                "Hoehe": "238",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.8646,
+                    48.6657
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 4887,
+                "rel": 0.575915380858538,
+                "Ort": "St\u00f6tten",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "734",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.1814,
+                    48.7693
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 4927,
+                "rel": 0.542108173522477,
+                "Ort": "Stuttgart-Stadt",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "286",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1984-07-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.1312,
+                    48.9895
+                ]
+            },
+            "properties": {
+                "cAll": 63,
+                "cOverMean": 1197,
+                "rel": 0.55328323199072,
+                "Ort": "Ellwangen-Rindelbach",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "460",
+                "von": "1940-12-31T22:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.3214,
+                    49.5181
+                ]
+            },
+            "properties": {
+                "cAll": 73,
+                "cOverMean": 755,
+                "rel": 0.635832785582064,
+                "Ort": "Buchen, Kr. Neckar-Odenwald",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "340",
+                "von": "1934-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.942,
+                    48.4254
+                ]
+            },
+            "properties": {
+                "cAll": 68,
+                "cOverMean": 232,
+                "rel": 0.557708187125224,
+                "Ort": "Augsburg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "461",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.116,
+                    49.7272
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 150,
+                "rel": 0.570005325619506,
+                "Ort": "Alzey",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "215",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.6868,
+                    49.264
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 460,
+                "rel": 0.566892551970836,
+                "Ort": "Berus",
+                "Bundesland": "Saarland",
+                "Lage": "W",
+                "Hoehe": "363",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.9206,
+                    49.8742
+                ]
+            },
+            "properties": {
+                "cAll": 60,
+                "cOverMean": 282,
+                "rel": 0.600475600819961,
+                "Ort": "Bamberg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "240",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.0386,
+                    49.4738
+                ]
+            },
+            "properties": {
+                "cAll": 40,
+                "cOverMean": 5029,
+                "rel": 0.586800690894364,
+                "Ort": "Tholey",
+                "Bundesland": "Saarland",
+                "Lage": "W",
+                "Hoehe": "386",
+                "von": "1975-05-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.9336,
+                    48.2018
+                ]
+            },
+            "properties": {
+                "cAll": 33,
+                "cOverMean": 1440,
+                "rel": 0.554232345516704,
+                "Ort": "Freiamt-Ottoschwanden",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "481",
+                "von": "1971-04-30T23:00:00+0000",
+                "bis": "2003-12-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.1077,
+                    49.2128
+                ]
+            },
+            "properties": {
+                "cAll": 59,
+                "cOverMean": 4336,
+                "rel": 0.529756364974418,
+                "Ort": "Saarbr\u00fccken-Ensheim",
+                "Bundesland": "Saarland",
+                "Lage": "W",
+                "Hoehe": "320",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.0119,
+                    47.7035
+                ]
+            },
+            "properties": {
+                "cAll": 61,
+                "cOverMean": 5467,
+                "rel": 0.526948283767778,
+                "Ort": "Wendelstein",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "1832",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2012-09-19T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.6654,
+                    53.5196
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 5349,
+                "rel": 0.605587063943196,
+                "Ort": "Waren (M\u00fcritz)",
+                "Bundesland": "Mecklenburg-Vorpommern",
+                "Lage": "O",
+                "Hoehe": "73",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.6769,
+                    48.6018
+                ]
+            },
+            "properties": {
+                "cAll": 42,
+                "cOverMean": 2360,
+                "rel": 0.570940821599409,
+                "Ort": "H\u00fcll",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "438",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "1978-04-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.0605,
+                    54.5284
+                ]
+            },
+            "properties": {
+                "cAll": 56,
+                "cOverMean": 5516,
+                "rel": 0.619416088985016,
+                "Ort": "Fehmarn",
+                "Bundesland": "Schleswig-Holstein",
+                "Lage": "N",
+                "Hoehe": "3",
+                "von": "1947-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.0622,
+                    52.3813
+                ]
+            },
+            "properties": {
+                "cAll": 122,
+                "cOverMean": 3987,
+                "rel": 0.533434416267562,
+                "Ort": "Potsdam",
+                "Bundesland": "Brandenburg",
+                "Lage": "O",
+                "Hoehe": "81",
+                "von": "1892-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.2206,
+                    48.1877
+                ]
+            },
+            "properties": {
+                "cAll": 33,
+                "cOverMean": 4018,
+                "rel": 0.491364680250999,
+                "Ort": "Puch",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "550",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1983-08-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1845,
+                    49.6663
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 5397,
+                "rel": 0.57684773067648,
+                "Ort": "Weiden",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "440",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.7094,
+                    48.1369
+                ]
+            },
+            "properties": {
+                "cAll": 47,
+                "cOverMean": 3390,
+                "rel": 0.514034058058234,
+                "Ort": "M\u00fcnchen-Riem",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "529",
+                "von": "1939-12-31T23:00:00+0000",
+                "bis": "1992-05-15T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.276,
+                    47.3986
+                ]
+            },
+            "properties": {
+                "cAll": 78,
+                "cOverMean": 3730,
+                "rel": 0.520722230104446,
+                "Ort": "Oberstdorf",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "806",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1021,
+                    49.0424
+                ]
+            },
+            "properties": {
+                "cAll": 67,
+                "cOverMean": 4104,
+                "rel": 0.592241961670255,
+                "Ort": "Regensburg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "365",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.1279,
+                    47.8752
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 4261,
+                "rel": 0.531971886684329,
+                "Ort": "Rosenheim",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "444",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.0506,
+                    48.6159
+                ]
+            },
+            "properties": {
+                "cAll": 54,
+                "cOverMean": 73,
+                "rel": 0.663256082964829,
+                "Ort": "Aldersbach-Kriestorf",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "340",
+                "von": "1959-02-28T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.2415,
+                    53.4793
+                ]
+            },
+            "properties": {
+                "cAll": 50,
+                "cOverMean": 1972,
+                "rel": 0.57389332919272,
+                "Ort": "Hamburg-Bergedorf",
+                "Bundesland": "Hamburg",
+                "Lage": "N",
+                "Hoehe": "35",
+                "von": "1911-12-31T23:00:00+0000",
+                "bis": "1962-09-29T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.6946,
+                    48.4025
+                ]
+            },
+            "properties": {
+                "cAll": 74,
+                "cOverMean": 5404,
+                "rel": 0.579860630083822,
+                "Ort": "Weihenstephan-D\u00fcrnast",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "477",
+                "von": "1930-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.5598,
+                    48.8275
+                ]
+            },
+            "properties": {
+                "cAll": 46,
+                "cOverMean": 4911,
+                "rel": 0.496339549093305,
+                "Ort": "Straubing",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "350",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.2,
+                    48.8282
+                ]
+            },
+            "properties": {
+                "cAll": 37,
+                "cOverMean": 4928,
+                "rel": 0.616471498712277,
+                "Ort": "Stuttgart (Schnarrenberg)",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "314",
+                "von": "1957-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.9319,
+                    49.0114
+                ]
+            },
+            "properties": {
+                "cAll": 67,
+                "cOverMean": 5440,
+                "rel": 0.61038867000276,
+                "Ort": "Wei\u00dfenburg-Emetzheim",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "439",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.2961,
+                    48.6765
+                ]
+            },
+            "properties": {
+                "cAll": 44,
+                "cOverMean": 2521,
+                "rel": 0.533666145948739,
+                "Ort": "Karlshuld",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "374",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "1994-03-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.4872,
+                    48.8301
+                ]
+            },
+            "properties": {
+                "cAll": 66,
+                "cOverMean": 2700,
+                "rel": 0.598990007505539,
+                "Ort": "K\u00f6sching",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "417",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.9524,
+                    48.3837
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 5155,
+                "rel": 0.506046710601834,
+                "Ort": "Ulm",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "567",
+                "von": "1943-12-31T23:00:00+0000",
+                "bis": "2014-08-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.0109,
+                    47.8009
+                ]
+            },
+            "properties": {
+                "cAll": 77,
+                "cOverMean": 2290,
+                "rel": 0.536640480178304,
+                "Ort": "Hohenpei\u00dfenberg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "977",
+                "von": "1780-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.1213,
+                    49.3758
+                ]
+            },
+            "properties": {
+                "cAll": 54,
+                "cOverMean": 5426,
+                "rel": 0.516698470740814,
+                "Ort": "Weinbiet",
+                "Bundesland": "Rheinland-Pfalz",
+                "Lage": "W",
+                "Hoehe": "553",
+                "von": "1952-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.1342,
+                    49.113
+                ]
+            },
+            "properties": {
+                "cAll": 32,
+                "cOverMean": 1832,
+                "rel": 0.530672602598992,
+                "Ort": "Gro\u00dfer Arber",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "1436",
+                "von": "1982-10-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.4091,
+                    48.4537
+                ]
+            },
+            "properties": {
+                "cAll": 64,
+                "cOverMean": 1468,
+                "rel": 0.522009972481574,
+                "Ort": "Freudenstadt",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "797",
+                "von": "1948-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.0473,
+                    47.6777
+                ]
+            },
+            "properties": {
+                "cAll": 40,
+                "cOverMean": 5890,
+                "rel": 0.467363545999874,
+                "Ort": "Kohlgrub, Bad (A)",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "850",
+                "von": "1950-12-31T23:00:00+0000",
+                "bis": "1991-07-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.5262,
+                    50.5016
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 2497,
+                "rel": 0.600784263734658,
+                "Ort": "Kall-Sistig",
+                "Bundesland": "Nordrhein-Westfalen",
+                "Lage": "W",
+                "Hoehe": "505",
+                "von": "1946-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.0549,
+                    49.5031
+                ]
+            },
+            "properties": {
+                "cAll": 60,
+                "cOverMean": 3668,
+                "rel": 0.568232053997881,
+                "Ort": "N\u00fcrnberg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "314",
+                "von": "1955-03-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.9847,
+                    47.4209
+                ]
+            },
+            "properties": {
+                "cAll": 113,
+                "cOverMean": 5792,
+                "rel": 0.487145896178725,
+                "Ort": "Zugspitze",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "2964",
+                "von": "1900-07-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.6827,
+                    47.7327
+                ]
+            },
+            "properties": {
+                "cAll": 36,
+                "cOverMean": 4091,
+                "rel": 0.515530265966861,
+                "Ort": "Rauschberg bei Ruhpolding",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "1640",
+                "von": "1962-06-30T23:00:00+0000",
+                "bis": "1998-06-29T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.5024,
+                    48.2791
+                ]
+            },
+            "properties": {
+                "cAll": 62,
+                "cOverMean": 3366,
+                "rel": 0.530084186164538,
+                "Ort": "M\u00fchldorf",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "406",
+                "von": "1952-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.0273,
+                    48.2719
+                ]
+            },
+            "properties": {
+                "cAll": 34,
+                "cOverMean": 4706,
+                "rel": 0.52019916389606,
+                "Ort": "Simbach/Inn",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "360",
+                "von": "1980-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.3261,
+                    48.6321
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 3671,
+                "rel": 0.404784900392408,
+                "Ort": "N\u00fcrtingen",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "280",
+                "von": "1954-12-31T23:00:00+0000",
+                "bis": "1991-03-30T23:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.5011,
+                    48.166
+                ]
+            },
+            "properties": {
+                "cAll": 44,
+                "cOverMean": 3385,
+                "rel": 0.516115794170923,
+                "Ort": "M\u00fcnchen-Nymphenburg",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "515",
+                "von": "1954-12-31T23:00:00+0000",
+                "bis": "1999-03-30T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.3348,
+                    47.7233
+                ]
+            },
+            "properties": {
+                "cAll": 60,
+                "cOverMean": 2559,
+                "rel": 0.532353383718084,
+                "Ort": "Kempten",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "705",
+                "von": "1951-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.0623,
+                    47.4831
+                ]
+            },
+            "properties": {
+                "cAll": 78,
+                "cOverMean": 1550,
+                "rel": 0.522327048590825,
+                "Ort": "Garmisch-Partenkirchen",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "719",
+                "von": "1935-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.1901,
+                    47.6774
+                ]
+            },
+            "properties": {
+                "cAll": 42,
+                "cOverMean": 2712,
+                "rel": 0.512435267235757,
+                "Ort": "Konstanz",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "443",
+                "von": "1972-10-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.828,
+                    48.3647
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 2812,
+                "rel": 0.438193452279761,
+                "Ort": "Lahr",
+                "Bundesland": "Baden-W\u00fcrttemberg",
+                "Lage": "S",
+                "Hoehe": "155",
+                "von": "1949-12-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.5429,
+                    48.1631
+                ]
+            },
+            "properties": {
+                "cAll": 30,
+                "cOverMean": 3379,
+                "rel": 0.390825176839685,
+                "Ort": "M\u00fcnchen-Stadt",
+                "Bundesland": "Bayern",
+                "Lage": "S",
+                "Hoehe": "515",
+                "von": "1954-05-31T23:00:00+0000",
+                "bis": "2015-04-21T22:00:00+0000"
+            }
+        }
+    ]
+}
