@@ -160,6 +160,7 @@ var run = function(geojsonObject) {
       }
     };
     
+    var isCor = false;
     pointVector.forEachFeature(function(feature){
       // erstelle Filterobjekt für alle Filter, dies es geben soll!
       filterObj.push({
@@ -172,13 +173,23 @@ var run = function(geojsonObject) {
       feature.B.von = new Date(feature.B.von);
       feature.B.bis = new Date(feature.B.bis); 
       
+      // cor means neg value
+      if(!isCor){
+	isCor = feature.B.rel < 0;
+      }
       // init ranges
       dynamicSliderRanges.adjustMinMaxFor(sliderHeight, parseFloat(feature.B.Hoehe));
       dynamicSliderRanges.adjustMinMaxFor(sliderCount, feature.B.cAll);
       dynamicSliderRanges.adjustMinMaxFor(sliderLowerDate, feature.B.von.getFullYear());
       dynamicSliderRanges.adjustMinMaxFor(sliderHigherDate, feature.B.bis.getFullYear());
     });      
-  
+    
+    if(isCor){
+      createLegende($("#legende"), 200, 25, -1.0, 1.0);
+    } else {
+      createLegende($("#legende"), 200, 50, 0, 1.0);
+    }
+    
     var countDatasets = filterObj.length;
    
     $.each(sliders, function(i,sliderId){
