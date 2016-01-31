@@ -16,4 +16,3 @@ title(xlab="Year")
 title(ylab="Annual precipitation")
 
 abline(lm(niedMean$rainMean ~ niedMean$Year))
-abline(lm(tempDf$meanTemp ~ tempDf$Year))
