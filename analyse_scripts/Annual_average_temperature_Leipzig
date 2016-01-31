@@ -1,0 +1,10 @@
+leipzigDF <- read.csv(file = "C:/Users/Max/Desktop/leipzig-Rdf.csv")
+minTemp <- aggregate(list(minTemp = leipzigDF$LUFTTEMPERATUR_MINIMUM),by = list(Year = leipzigDF$YEAR),FUN ="mean")
+maxTemp <- aggregate(list(maxTemp = leipzigDF$LUFTTEMPERATUR_MAXIMUM),by = list(Year = leipzigDF$YEAR),FUN = "mean")
+tempDf <- merge(minTemp,maxTemp,by.x="Year", by.y = "Year")
+tempDf$meanTemp <- rowMeans(subset(tempDf, select = c(minTemp, maxTemp)), na.rm = TRUE)
+plot(tempDf$Year,tempDf$meanTemp,ann=FALSE,type = "p")
+title(xlab="Year")
+title(ylab="Annual average temperature")
+
+abline(lm(tempDf$meanTemp ~ tempDf$Year))
