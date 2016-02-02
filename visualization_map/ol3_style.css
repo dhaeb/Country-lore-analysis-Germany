@@ -72,7 +72,8 @@ body, html {
     top: 10px;
     right: 10px;
     width: 40px;
-    border: 3px solid #73AD21;
+    border-left: 3px solid #C0C0C0;
+    border-right: 3px solid #C0C0C0;
 }
 
 .legendeBlock{
@@ -82,4 +83,21 @@ body, html {
 
 .legendeTextBlock{
     position:relative;
+}
+
+.scale-slider{
+    cursor:ns-resize;
+    width: 40px;
+    height: 4px;
+    background-color: LightGray;  
+}
+
+.scale-slider-line{
+    border-top: solid black 0.5px;
+    height: 0px;
+    margin: 0px;
+    position: relative;
+    top: 1px;
+    width: 30px;
+    left: 4px;
 }
