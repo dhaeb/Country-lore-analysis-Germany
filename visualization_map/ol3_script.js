@@ -185,9 +185,9 @@ var run = function(geojsonObject) {
     });      
     
     if(isCor){
-      createLegende($("#legende"), 200, 25, -1.0, 1.0);
+      createLegende($("#legende"), 25, -1.0, 1.0);
     } else {
-      createLegende($("#legende"), 200, 50, 0, 1.0);
+      createLegende($("#legende"), 25, 0, 1.0);
     }
     
     var countDatasets = filterObj.length;
