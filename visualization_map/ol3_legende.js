@@ -4,7 +4,7 @@ var filterWithSliderRange;
 
 var legendeBlockHeight = 2;
 
-var rangeDivRelation = 100;
+var env = {};
 
 var maxLegendScaleRange = {
     from: 0.0,
@@ -28,6 +28,8 @@ numberOfSubDivs determines the size of the legende
 rangeFrom and rangeTo determine the border values of the legende scale
 */
 var createLegende = function(legendeElement, labelCount, rangeFrom, rangeTo, size){
+    env.rangeDivRelation = size / (rangeTo - rangeFrom);
+    env.size = size;
     filterWithSliderRange = function(){
       $(legendeElement).attr("value", currentLegendScaleRange);
       $(legendeElement).attr("from", currentLegendScaleRange.from);
@@ -38,7 +40,7 @@ var createLegende = function(legendeElement, labelCount, rangeFrom, rangeTo, siz
     var sliderTop = createSliderTop();
     $(legendeElement).append(sliderTop);
 
-    var scale = createScale(labelCount, rangeFrom, rangeTo, size);
+    var scale = createScale(labelCount, rangeFrom, rangeTo);
     $(legendeElement).append(scale);
  
     var sliderBottom = createSliderBottom();
@@ -51,15 +53,14 @@ var addLabel = function(element, value){
     $("<div>").addClass("legendeTextBlock").text(value).appendTo(element);
 }
 
-var createScale = function(labelCount, rangeFrom, rangeTo, size){
+var createScale = function(labelCount, rangeFrom, rangeTo){
     var scale = $("<div>").addClass("scaleDiv");
-    addScaleBlocks(scale, labelCount, rangeFrom, rangeTo, size);
+    addScaleBlocks(scale, labelCount, rangeFrom, rangeTo);
     return scale;
 }
 
-var addScaleBlocks = function(scale, labelCount, rangeFrom, rangeTo, size){
-    rangeDivRelation = size;
-    var numberOfSubDivs = size;
+var addScaleBlocks = function(scale, labelCount, rangeFrom, rangeTo){
+    var numberOfSubDivs = env.size;
     console.log(numberOfSubDivs);
     maxLegendScaleRange.from = rangeFrom;
     maxLegendScaleRange.to = rangeTo;
@@ -149,7 +150,8 @@ var isInMaxRange = function(range){
 
 
 var diffToRangeValue = function(diff){
-    return diff/legendeBlockHeight/rangeDivRelation;
+    console.log(env.rangeDivRelation);
+    return diff/legendeBlockHeight/env.rangeDivRelation;
 }
 
 var fractionalDigits = 2;

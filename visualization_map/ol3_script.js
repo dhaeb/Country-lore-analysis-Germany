@@ -190,7 +190,7 @@ var run = function(geojsonObject) {
     if(isCor){
       createLegende($("#" + sliderOutcome), 25, -1.0, 1.0, 200);
     } else {
-      createLegende($("#" + sliderOutcome), 25, 0, 1.0, 100);
+      createLegende($("#" + sliderOutcome), 50, 0, 1.0, 200);
     }
     
     var countDatasets = filterObj.length;
