@@ -1,4 +1,5 @@
-  
+/* Dependencies: constants.js ol3_script.js, jquery  */  
+
 Array.prototype.max = function() {
 return Math.max.apply(null, this);
 };
@@ -129,14 +130,7 @@ var run = function(geojsonObject) {
 	    dataProjection : "EPSG:4326",
 	    featureProjection : "EPSG:3857"
 	}),
-    }); 
-
-    var sliderLowerDate = "sliderLowerDate",
-    sliderCount   = "sliderCount",
-    sliderHeight = "sliderHeight",
-    sliderHigherDate = "sliderHigherDate",
-    
-    sliders = [sliderHeight, sliderCount, sliderLowerDate, sliderHigherDate];
+    });     
     
     // init dynamic slider ranges
     var dynamicSliderRanges = {
@@ -160,16 +154,25 @@ var run = function(geojsonObject) {
       }
     };
     
+    function createNewFilterObj(filters){
+      var returnable = {};
+      filters.forEach(function(e){
+	returnable[e] = false;
+      });
+      returnable.isFilteredOut = function() {
+	  var isFiltered = false;
+	  filters.forEach(function(e){
+ 	    isFiltered = isFiltered || returnable[e];
+	  });
+	  return isFiltered;
+      };
+      return returnable;
+    }
+    
     var isCor = false;
     pointVector.forEachFeature(function(feature){
       // erstelle Filterobjekt für alle Filter, dies es geben soll!
-      filterObj.push({
-	      sliderHeight : false,
-	      sliderCount : false,
-	      sliderLowerDate : false,
-	      sliderHigherDate : false,
-	      isFilteredOut : function() {return this.sliderHeight | this.sliderCount | this.sliderLowerDate | this.sliderHigherDate;}
-      });
+      filterObj.push(createNewFilterObj(filters));
       feature.B.von = new Date(feature.B.von);
       feature.B.bis = new Date(feature.B.bis); 
       
@@ -185,9 +188,9 @@ var run = function(geojsonObject) {
     });      
     
     if(isCor){
-      createLegende($("#legende"), 25, -1.0, 1.0);
+      createLegende($("#" + sliderOutcome), 25, -1.0, 1.0);
     } else {
-      createLegende($("#legende"), 25, 0, 1.0);
+      createLegende($("#" + sliderOutcome), 25, 0, 1.0);
     }
     
     var countDatasets = filterObj.length;
@@ -196,20 +199,18 @@ var run = function(geojsonObject) {
       function adjustSlider(applyable){
 	if(!applyable){
 	   applyable = function(slider, min, max){
-	      slider.min = min;
 	      slider.value = min;
-	      slider.max = max;
 	   }; 
 	}
 	var curSlider = $("#" + sliderId)[0];
 	var min = dynamicSliderRanges.getMinOf(sliderId);
 	var max = dynamicSliderRanges.getMaxOf(sliderId);
+	curSlider.min = min;
+	curSlider.max = max;
 	applyable(curSlider, min, max);
       }
       if(sliderId == sliderHigherDate){
 	adjustSlider(function(slider, min, max){
-	  slider.min = min;
-	  slider.max = max;
 	  slider.value = max;
 	});
       } else {
@@ -272,27 +273,42 @@ var run = function(geojsonObject) {
       } 
     });
         
-     $.each(sliders, function(i, id){
+     $.each(filters, function(i, id){
      	var idCssSelector = "#" + id;
      	$(idCssSelector).bind('slidestop input', function(chngEvt){
 		    function ltCompareFloats(comparable, parseable) {
 			    return comparable < parseFloat(parseable);
 		    };
-
+		    
+		    function filteredFeatureOut(feature, compareFunc, comparable, value){
+		      if(compareFunc(comparable, value)){
+			feature.setStyle(invisble); // filtering out meens set the style to invisble
+			return true;
+		      } else {
+			return false;
+		      }
+		    };
 		    $.each(pointVector.getFeatures(),  function(i, e){ 
 		        var filter = filterObj[i];
 		        function checkFor(comparable, filterName, compareFunc){
 			      var result = false;
 			      if(chngEvt.target.id == filterName){
-				    if(compareFunc(comparable, chngEvt.target.value)){
-					    result = true;
-					    e.setStyle(invisble);
-	                            } 
-				    filter[chngEvt.target.id] = result;
+				 if(typeof chngEvt.target.value  == 'undefined'){
+				   filter[chngEvt.target.id] = filteredFeatureOut(e, compareFunc, comparable, {
+				     "from" : parseFloat($(chngEvt.target).attr("from")),
+				     "to"   : parseFloat($(chngEvt.target).attr("to"))
+				   });
+				 } else {
+				   filter[chngEvt.target.id] = filteredFeatureOut(e, compareFunc, comparable, chngEvt.target.value);
+				 } 
+				 result = true;
 			      } 
 			      return result;
 	                };
-		        checkFor(e.B.Hoehe, sliderHeight, ltCompareFloats) || checkFor(e.B.cAll, sliderCount, ltCompareFloats) || checkFor(e.B.von, sliderLowerDate, function(a,b){return a < new Date(parseInt(b), 0, 1);}) || checkFor(e.B.bis, sliderHigherDate, function(a,b){return a > new Date(parseInt(b), 0, 1);})
+		        checkFor(e.B.Hoehe, sliderHeight, ltCompareFloats) || checkFor(e.B.cAll, sliderCount, ltCompareFloats) || checkFor(e.B.von, sliderLowerDate, function(a,b){return a < new Date(parseInt(b), 0, 1);}) || checkFor(e.B.bis, sliderHigherDate, function(a,b){return a > new Date(parseInt(b), 0, 1);}) 
+			|| checkFor(e.B.rel, sliderOutcome, function(a,b){
+			  return !(e.B.rel > b.from && e.B.rel < b.to);
+			});
 
 		        if(!filter.isFilteredOut()) {
 			    e.setStyle(styleFunction(e));

@@ -1,6 +1,6 @@
-/* Dependencies: ol3_script.js, jquery  */
+/* Dependencies: constants.js ol3_script.js, jquery  */
 
-var filterWithSliderRange = function(){console.log(currentLegendScaleRange);}
+var filterWithSliderRange;
 
 var legendeBlockHeight = 2;
 var rangeDivRelation = 100;
@@ -27,6 +27,13 @@ numberOfSubDivs determines the size of the legende
 rangeFrom and rangeTo determine the border values of the legende scale
 */
 var createLegende = function(legendeElement, labelCount, rangeFrom, rangeTo){
+    filterWithSliderRange = function(){
+      $(legendeElement).attr("value", currentLegendScaleRange);
+      $(legendeElement).attr("from", currentLegendScaleRange.from);
+      $(legendeElement).attr("to", currentLegendScaleRange.to);
+      // JQuery custom Event
+      $(legendeElement).trigger("slidestop");
+    };
     var sliderTop = createSliderTop();
     $(legendeElement).append(sliderTop);
 
