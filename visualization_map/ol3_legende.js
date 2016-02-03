@@ -144,12 +144,19 @@ var isInMaxRange = function(range){
     return maxLegendScaleRange.from <= range.from && maxLegendScaleRange.to >= range.to && range.to > range.from;
 }
 
+
 var diffToRangeValue = function(diff){
     return diff/legendeBlockHeight/rangeDivRelation;
 }
 
+var fractionalDigits = 2;
+var powerOfTen = Math.pow(10, fractionalDigits);
+var roundToTwoDigits = function(number){
+  return Math.round(number * powerOfTen) / powerOfTen;
+}
+
 var getNewRangeValue = function(range, valName, diff){
-    return range[valName] - diffToRangeValue(diff);
+    return roundToTwoDigits(range[valName] - diffToRangeValue(diff));
 }
 
 var changeRangeValue = function(range, valueName, diff){
