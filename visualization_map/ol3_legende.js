@@ -3,6 +3,7 @@
 var filterWithSliderRange;
 
 var legendeBlockHeight = 2;
+
 var rangeDivRelation = 100;
 
 var maxLegendScaleRange = {
@@ -26,7 +27,7 @@ label count is the counting of blocks between labels
 numberOfSubDivs determines the size of the legende
 rangeFrom and rangeTo determine the border values of the legende scale
 */
-var createLegende = function(legendeElement, labelCount, rangeFrom, rangeTo){
+var createLegende = function(legendeElement, labelCount, rangeFrom, rangeTo, size){
     filterWithSliderRange = function(){
       $(legendeElement).attr("value", currentLegendScaleRange);
       $(legendeElement).attr("from", currentLegendScaleRange.from);
@@ -37,7 +38,7 @@ var createLegende = function(legendeElement, labelCount, rangeFrom, rangeTo){
     var sliderTop = createSliderTop();
     $(legendeElement).append(sliderTop);
 
-    var scale = createScale(labelCount, rangeFrom, rangeTo);
+    var scale = createScale(labelCount, rangeFrom, rangeTo, size);
     $(legendeElement).append(scale);
  
     var sliderBottom = createSliderBottom();
@@ -50,14 +51,15 @@ var addLabel = function(element, value){
     $("<div>").addClass("legendeTextBlock").text(value).appendTo(element);
 }
 
-var createScale = function(labelCount, rangeFrom, rangeTo){
+var createScale = function(labelCount, rangeFrom, rangeTo, size){
     var scale = $("<div>").addClass("scaleDiv");
-    addScaleBlocks(scale, labelCount, rangeFrom, rangeTo);
+    addScaleBlocks(scale, labelCount, rangeFrom, rangeTo, size);
     return scale;
 }
 
-var addScaleBlocks = function(scale, labelCount, rangeFrom, rangeTo){
-    var numberOfSubDivs = getNumberOfSubDivs(rangeFrom, rangeTo);
+var addScaleBlocks = function(scale, labelCount, rangeFrom, rangeTo, size){
+    rangeDivRelation = size;
+    var numberOfSubDivs = size;
     console.log(numberOfSubDivs);
     maxLegendScaleRange.from = rangeFrom;
     maxLegendScaleRange.to = rangeTo;
@@ -72,12 +74,6 @@ var addScaleBlocks = function(scale, labelCount, rangeFrom, rangeTo){
         }
         $(scale).append(div);
     }
-}
-
-
-var getNumberOfSubDivs = function(rangeFrom, rangeTo){
-    var diff = rangeTo - rangeFrom;
-    return diff * rangeDivRelation;
 }
 
 var resetScale = function(legendeElement, labelCount, rangeFrom, rangeTo){
