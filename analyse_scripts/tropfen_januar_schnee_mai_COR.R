@@ -91,8 +91,14 @@ corSMS
 
 write.csv(corSMS,"Outputs/tropfen_januar_schnee_mai_COR_30.csv")
 
+# Anzahl der Jahre mit Schnee
+countSM <- schneeMaiF %>% group_by(SID) %>% summarise(num=count())
+colnames(countSM)[1] <- "SID"
+countSM <- data.frame(countSM)
+colnames(countSM)[2] <- "Jahre mit Schnee in Mai"
+countSM
 corSMSx <-select(corSMS,SID,COR,yearCount,Statationshoehe,Stationsname,Bundesland,Lage) 
-corSMSx
+
 colnames(corSMSx) <- c("SID","COR","yearCount","Statationshoehe","Stationsname","Bundesland","Lage")
 digit <-c(0,0,3,0,0,0,0,0)
 corSMSx <- make_xtable(digit,corSMSx) 
@@ -100,6 +106,13 @@ corSMSx <- make_xtable(digit,corSMSx)
 st4933 <- filter(dfT30[[1]], SID==4933)
 st4933
 
-countSM <- data.frame(schneeMaiF %>% group_by(SID) %>% summarise(num=count(SID)))
-nrow(countSM)
-colnames(countSM) <- c("SID","yearCount")
+st5792 <- filter(dfT30[[1]], SID==5792)
+st5792
+
+png(file = "Plots/Zugspitze.png")
+plot(st5792$allMeanREGENj,st5792$allMeanSCHNEEm, main = "Station: Zugspitze, Korrelation: 0.372 ",
+     xlab="Durchschnittliche Niederschlagshoehe im Januar (cm)", ylab="Durchschnittliche Schneehoehe im Mai (cm)", pch=19, col = "darkgreen",
+     cex.lab=1.2,cex.axis=1.2)
+dev.off()
+
+

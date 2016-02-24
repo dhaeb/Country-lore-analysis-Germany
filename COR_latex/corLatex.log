@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  24 FEB 2016 15:55
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  24 FEB 2016 20:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -286,7 +286,7 @@ Overfull \hbox (0.83577pt too wide) in paragraph at lines 78--78
 ./corLatex.tex:100: Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.100 ...en: Anzahl der Jahren mit Wetterdaten \\}
+l.100 ...: Anzahl der Jahren mit Schnee im Mai \\}
                                                   
 ? 
 Runaway argument?
@@ -295,7 +295,7 @@ ETC.
 ./corLatex.tex:100: Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.100 ...en: Anzahl der Jahren mit Wetterdaten \\}
+l.100 ...: Anzahl der Jahren mit Schnee im Mai \\}
                                                   
 ? 
 

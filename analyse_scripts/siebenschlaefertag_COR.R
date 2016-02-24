@@ -86,3 +86,37 @@ write.table(sieben_r1,"Outputs/siebenschlaefertag_COR_r1.csv",col.names=FALSE)
 write.table(sieben_r2,"Outputs/siebenschlaefertag_COR_r2.csv",col.names=FALSE)
 write.table(sieben_t1,"Outputs/siebenschlaefertag_COR_t1.csv",col.names=FALSE)
 write.table(sieben_t2,"Outputs/siebenschlaefertag_COR_t2.csv",col.names=FALSE)
+
+# plots
+sieben_t1 <- sieben_t1 %>% arrange(-corTEMPz1)
+sieben_t1 <- data.frame(sieben_t1)
+head(sieben_t1)
+# SID yearCount sid2  corTEMPz1 longitude latitude                     Stationsname          Bundesland Lage
+# 1 2474        32 2474 0.59384283   50.9104   6.4093          Jülich (Forsch.-Anlage) Nordrhein-Westfalen    W
+# 2  554        38  554 0.59096328   51.8293   6.5365     Bocholt-Liedern (Wasserwerk) Nordrhein-Westfalen    W
+# 3 2456        63 2456 0.57275739   53.5322   7.8806                            Jever       Niedersachsen    N
+# 4  619        57  619 0.56939310   53.5788   6.6703               Borkum-Süderstraße       Niedersachsen    N
+# 5 1219        30 1219 0.56884044   53.3449   7.1909                 Emden-Nesserland       Niedersachsen    N
+
+tempRaw <- dplyr::select(df30_no0,SID,YEAR,yearCount,allMeanTEMP,allMeanTEMPw)
+t2474 <- filter(tempRaw,SID==2474)
+
+png(file = "Plots/T1_Juelich.png")
+plot(t2474$allMeanTEMP,t2474$allMeanTEMPw, main = "Station: Jülich, Korrelation: 0.594 ",
+     xlab="Durchschnittliche Temperatur im Siebenschläfertag (26.06 - 28.06)", ylab="Durchschnittliche Temperatur in den 7 Wochen danach (29.06 - 17.08)", pch=19, col = "darkgreen",
+     cex.lab=1.2,cex.axis=1.2)
+dev.off()
+
+t554 <- filter(tempRaw,SID==554)
+png(file = "Plots/T2_Bocholt-Liedern.png")
+plot(t554$allMeanTEMP,t554$allMeanTEMPw, main = "Station: Bocholt-Liedern, Korrelation: 0.591 ",
+     xlab="Durchschnittliche Temperatur im Siebenschläfertag (26.06 - 28.06)", ylab="Durchschnittliche Temperatur in den 7 Wochen danach (29.06 - 17.08)", pch=19, col = "darkgreen",
+     cex.lab=1.2,cex.axis=1.2)
+dev.off()
+
+t2456 <- filter(tempRaw,SID==2456)
+png(file = "Plots/T3_Jever.png")
+plot(t2456$allMeanTEMP,t2456$allMeanTEMPw, main = "Station: Jever, Korrelation: 0.573 ",
+     xlab="Durchschnittliche Temperatur im Siebenschläfertag (26.06 - 28.06)", ylab="Durchschnittliche Temperatur in den 7 Wochen danach (29.06 - 17.08)", pch=19, col = "darkgreen",
+     cex.lab=1.2,cex.axis=1.2)
+dev.off()

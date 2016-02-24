@@ -10,6 +10,7 @@ deDf <- data.frame(countDf %>% select(2:7) %>% summarise_each(funs(max,min,over5
 deDf$Lage <-"DE"
 deDf <- select(deDf,Lage,everything())
 deDf
+
 # stats in each Lage (N,W,E,S)
 subCountDf <- dplyr::select(sieben1, Lage, corSONNEz1, corSONNEz2,corREGENz1,corREGENz2,corTEMPz1,corTEMPz2 )
 reDf <- data.frame(subCountDf %>% select(2:8) %>% group_by(Lage) %>% summarise_each(funs(max,min,over5,over4)))
@@ -58,3 +59,6 @@ countSub <- data.frame(subCountDf %>% group_by(Lage) %>% summarise(num = count(L
 colnames(countSub) <- c("Lage","Count")
 countSub
 head(subCountDf)
+
+st5792 <- filter(dfT30[[1]], SID==5792)
+st5792
