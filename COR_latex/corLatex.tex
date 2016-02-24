@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+
+% *** TABLE PACKAGES ***
+\usepackage{booktabs} % for nice line
+\usepackage{multirow}
+\usepackage{dcolumn} % alignment with sign in table
+\usepackage{pdflscape}
+
+\begin{document}
+
+\begin{landscape}
+\begin{table*}
+\centering   
+\caption{Maximum und Minimum Korrelationswerte f\"ur Sonnenscheindauer, Niederschlagsh\"ohe und Lufttemperatur im Zeitraum 26.06 - 28.06 vs. 29.06 - 17.08. Anzahl von Stationen, die die Korrelationswerte \"uber 0.5 oder 0.4 in jeder Region, ist auch gezeigt. \\} 
+\label{tab:}  
+\renewcommand{\arraystretch}{1.3}
+ \begin{small}
+\begin{tabular}{ccccc|cccc|ccccc|c}
+  \toprule
+   \multicolumn{1}{r}{\multirow{2}{1.2cm}{\textbf{Region}}}
+ & \multicolumn{4}{c|}{\textbf{Sonne}}
+& \multicolumn{4}{c|}{\textbf{Regen}}
+& \multicolumn{5}{c|}{\textbf{Temperatur}} \\
+\cline{2-15} 
+ & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{\%} &  \textbf{\# Station} \\ 
+  \midrule
+De & 0.599 & -0.070 & 4 & 14 & 0.442 & -0.319 & 0 & 5 & 0.594 & -0.005 & 31 & 101 & 44.3  & 228 \\ 
+  N & 0.472 & 0.086 & 0 & 4 & 0.282 & -0.097 & 0 & 0 & 0.573 & 0.324 & 17 & 39 &  81.2 & 48  \\ 
+  O & 0.409 & -0.053 & 0 & 1 & 0.151 & -0.164 & 0 & 0 & 0.533 & 0.170 & 2 & 18 &  38.3 & 47  \\ 
+  S & 0.447 & -0.070 & 0 & 1 & 0.442 & -0.319 & 0 & 2 & 0.525 & -0.005 & 2 & 12 &15.2 & 79   \\ 
+  W & 0.599 & -0.006 & 4 & 8 & 0.435 & -0.278 & 0 & 3 & 0.594 & 0.288 & 10 & 32 &  59.3  &54 \\ 
+   \bottomrule
+\end{tabular}
+\end{small}
+\end{table*}
+
+\end{landscape}
+
+\vspace{5cm}
+
+\begin{landscape}
+SAME TABLE as TABLE 1 with fewer info. \\
+\begin{table*}
+\centering   
+\caption{Maximum und Minimum Korrelationswerte f\"ur Sonnenscheindauer, Niederschlagsh\"ohe und Lufttemperatur im Zeitraum 26.06 - 28.06 vs. 29.06 - 17.08. Anzahl von Stationen, die die Korrelationswerte \"uber 0.5 oder 0.4 in jeder Region, ist auch gezeigt. \\} 
+\label{tab:}  
+\renewcommand{\arraystretch}{1.3}
+ \begin{small}
+\begin{tabular}{ccccccccccccc}
+  \toprule
+   \multicolumn{1}{r}{\multirow{2}{1.2cm}{\textbf{Region}}}
+ & \multicolumn{4}{c}{\textbf{Sonne}}
+& \multicolumn{4}{c}{\textbf{Regen}}
+& \multicolumn{4}{c}{\textbf{Temperatur}} \\
+\cline{2-13} 
+ & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$}  \\ 
+  \midrule
+De & 0.599 & -0.070 & 4 & 14 & 0.442 & -0.319 & 0 & 5 & 0.594 & -0.005 & 31 & 101 \\ 
+  N & 0.472 & 0.086 & 0 & 4 & 0.282 & -0.097 & 0 & 0 & 0.573 & 0.324 & 17 & 39   \\ 
+  O & 0.409 & -0.053 & 0 & 1 & 0.151 & -0.164 & 0 & 0 & 0.533 & 0.170 & 2 & 18  \\ 
+  S & 0.447 & -0.070 & 0 & 1 & 0.442 & -0.319 & 0 & 2 & 0.525 & -0.005 & 2 & 12    \\ 
+  W & 0.599 & -0.006 & 4 & 8 & 0.435 & -0.278 & 0 & 3 & 0.594 & 0.288 & 10 & 32\\ 
+   \bottomrule
+\end{tabular}
+\end{small}
+\end{table*}
+\end{landscape}
+
+\begin{landscape}
+\begin{table*}
+\centering   
+\caption{Maximum und Minimum Korrelationswerte f\"ur Sonnenscheindauer, Niederschlagsh\"ohe und Lufttemperatur im Zeitraum 25.06 - 07.07  vs  08.07 - 17.08. Anzahl von Stationen, die die Korrelationswerte  \"uber  0.5 oder 0.4 in jeder Region, ist auch gezeigt. \\} 
+\label{tab:}  
+\renewcommand{\arraystretch}{1.3}
+ \begin{small}
+\begin{tabular}{ccccccccccccc}
+  \toprule
+   \multicolumn{1}{r}{\multirow{2}{1.2cm}{\textbf{Region}}}
+ & \multicolumn{4}{c}{\textbf{Sonne}}
+& \multicolumn{4}{c}{\textbf{Regen}}
+& \multicolumn{4}{c}{\textbf{Temperatur}} \\
+\cline{2-13} 
+ & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} & \textbf{max} & \textbf{min} & \textbf{$>0.5$} & \textbf{$>0.4$} \\ 
+  \midrule
+De & 0.460 & -0.178 & 0 & 4 & 0.339 & -0.308 & 0 & 0 & 0.512 & -0.037 & 2 & 35 \\ 
+  N & 0.455 & 0.031 & 0 & 1 & 0.223 & -0.272 & 0 & 0 & 0.508 & 0.165 & 1 & 14 \\ 
+  O & 0.368 & -0.020 & 0 & 0 & 0.220 & -0.308 & 0 & 0 & 0.512 & 0.107 & 1 & 17 \\ 
+  S & 0.370 & -0.178 & 0 & 0 & 0.333 & -0.138 & 0 & 0 & 0.472 & -0.037 & 0 & 2 \\ 
+  W & 0.460 & -0.036 & 0 & 3 & 0.339 & -0.199 & 0 & 0 & 0.424 & 0.123 & 0 & 2 \\ 
+   \bottomrule
+\end{tabular}
+\end{small}
+\end{table*}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table*}
+\centering   
+\caption{Stationen mit mindestens 30 Jahre Schnee im Mai haben. KOR: Korrelation NIEDERSCHLAGSHOEHE im Januar vs SCHNEEHOEHE im Mai. Jahren: Anzahl der Jahren mit Wetterdaten \\} 
+\label{tab:}  
+\renewcommand{\arraystretch}{1.3}
+ \begin{small}
+\begin{tabular}{cccccccc}
+  \toprule
+ & \textbf{SID} & \textbf{KOR} & \textbf{Jahren} & \textbf{Stationsh\"ohe} & \textbf{Stationsname} & \textbf{Bundesland} & \textbf{Lage} \\ 
+  \midrule
+1 & 5792 & 0.372 & 111 & 2964 & Zugspitze & Bayern & S \\ 
+  2 & 1346 & 0.294 & 68 & 1490 & Feldberg/Schwarzwald & Baden-Württemberg & S \\ 
+  3 & 5467 & 0.155 & 61 & 1832 & Wendelstein & Bayern & S \\ 
+  4 & 4091 & 0.069 & 36 & 1640 & Rauschberg bei Ruhpolding & Bayern & S \\ 
+  5 & 1833 & 0.050 & 36 & 1307 & Grosser Falkenstein & Bayern & S \\ 
+  6 & 2349 & -0.066 & 53 & 1119 & Hornisgrinde & Baden-Württemberg & S \\ 
+  7 & 2290 & -0.097 & 95 & 977 & Hohenpeißenberg & Bayern & S \\ 
+   \bottomrule
+\end{tabular}
+\end{small}
+\end{table*}
+
+\end{landscape}
+
+\end{document}
+\documentclass{article}

@@ -1,7 +1,3 @@
-####################
-# sample size > 30
-####################
-
 df554 <- filter(df30_no0,SID==554)
 plot(df554$allMeanSONNE,df554$allMeanSONNEw)
 plot(df554$allMeanSONNE2,df554$allMeanSONNEw)

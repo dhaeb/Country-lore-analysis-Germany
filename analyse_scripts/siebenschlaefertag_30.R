@@ -246,7 +246,7 @@ sieben_r2 <- select(sieben, SID, yearCount,sid2,corREGENz2,longitude, latitude, 
 sieben_t1 <- select(sieben, SID, yearCount,sid2,corTEMPz1,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
 sieben_t2 <- select(sieben, SID, yearCount,sid2,corTEMPz2,longitude, latitude, Stationsname, Bundesland, Lage,Statationshoehe,von_datum,bis_datum)
 
-head(sieben_t2)
+head(sieben_s1)
 
 write.table(sieben_s1,"Outputs/siebenschlaefertag_COR_s1.csv",col.names=FALSE)
 write.table(sieben_s2,"Outputs/siebenschlaefertag_COR_s2.csv",col.names=FALSE)

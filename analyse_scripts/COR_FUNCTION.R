@@ -35,11 +35,11 @@ cal_cor <- function(df,count_df,weather) {
 # calculate correlation for each station using PERIOD 2 (SIEBENSCHLAEFTERTAG)
 cal_cor2 <- function(df,count_df,weather) {
     if (weather == "S") {
-        corDf <- df %>% group_by(SID) %>% dplyr::summarise(COR = cor(allMeanSONNE2,allMeanSONNEw))
+        corDf <- df %>% group_by(SID) %>% dplyr::summarise(COR = cor(allMeanSONNE2,allMeanSONNEw2))
     } else if (weather == "R") {
-        corDf <- df %>% group_by(SID) %>% dplyr::summarise(COR = cor(allMeanREGEN2,allMeanREGENw))
+        corDf <- df %>% group_by(SID) %>% dplyr::summarise(COR = cor(allMeanREGEN2,allMeanREGENw2))
     } else if (weather == "T") {
-        corDf <- df %>% group_by(SID) %>% dplyr::summarise(COR = cor(allMeanTEMP2,allMeanTEMPw))
+        corDf <- df %>% group_by(SID) %>% dplyr::summarise(COR = cor(allMeanTEMP2,allMeanTEMPw2))
     }
     # join year count and correlation
     joinCor <- inner_join(count_df,corDf,by = "SID")
@@ -58,3 +58,30 @@ cal_corT <- function(df,count_df) {
     return(list(joinCorDES,joinCorASC))
 }
 
+# count number of cases with correlation > 0.5
+over5 <- function(x){
+    n <- x[x>0.5]
+    length(n)
+}
+
+# count number of cases with correlation > 0.4
+over4 <- function(x){
+    n <- x[x>0.4]
+    length(n)
+}
+
+# count number of cases with correlation > 0.4
+over3 <- function(x){
+    n <- x[x>0.3]
+    length(n)
+}
+
+library(xtable)
+make_xtable <- function(digit=NULL, inTable){
+    ncols <- ncol(inTable)+1
+    t1 <- xtable(inTable)
+    digits(t1) <- digit
+    align(t1) <- rep("c", ncols)
+    bold <- function(x) {paste('\\textbf{',x,'}', sep ='')}
+    print(t1, booktabs = TRUE,sanitize.colnames.function=bold )
+}
