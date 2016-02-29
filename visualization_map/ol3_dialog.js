@@ -2,9 +2,12 @@
 Dependencies: jquery, html5:fileAPI, html5:dialog
 */
 
-var readFile = function(fileInput, resultCallback) {
-    //Retrieve all the files from the FileList object
-    var file = fileInput.files[0];
+String.prototype.replaceAll = function(search, replacement) { // taken from: http://stackoverflow.com/questions/1144783/replacing-all-occurrences-of-a-string-in-javascript
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+var readFile = function(file, resultCallback) {
     if (file) {
         var reader = new FileReader();
         reader.onload = (function (file) {
@@ -32,12 +35,26 @@ var getCloseButton = function(dialog, fileInput, resultCallback){
         .text("OK")
         .bind("click", function(){ 
             if(notEmptyInput(fileInput)){
-                readFile(fileInput, resultCallback); 
+		var file = fileInput.files[0]; //Retrieve the first element from the FileList object
+		console.log(file);
+		setTitle(file);
+                readFile(file, resultCallback); 
                 dialog.close(); 
                 dialog.parentNode.removeChild(dialog);
             }
         }
     );
+}
+
+var setTitle = function(file){
+  var extentionRemovedFile = file.name.replaceAll("\\.json|_geo", ""); // remove _geo.json
+  document.title = "Analyse cl: " + fromSnailCaseToNormalText(extentionRemovedFile);
+};
+
+var fromSnailCaseToNormalText = function(snailCaseText){
+  return $.map(snailCaseText.split("_"), function(e){
+    return e[0].toUpperCase() + e.slice(1, e.length);
+  }).join(' ');
 }
 
 var showDialog = function(resultCallback){
