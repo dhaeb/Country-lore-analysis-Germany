@@ -398,8 +398,12 @@ analyseCountryLore <- function(clInput){
   file_list <- list.files(path = pathToResultSplits, pattern = "part-\\d{5}")
   outputCsvFile <- file(paste(pathToResultSplits, "/", clInput$folderName, ".csv", sep = ""), 'w')
   for(filename in file_list){
-    fhandle <- file(paste(pathToResultSplits, "/", filename, sep=""), 'r')
-    cat(readLines(fhandle), file = outputCsvFile, append = TRUE, sep = "\n")
+    pathToFile <- paste(pathToResultSplits, "/", filename, sep="")
+    if(file.info(pathToFile)$size > 0){
+      print(pathToFile)
+      fhandle <- file(pathToFile, 'r')
+      cat(readLines(fhandle), file = outputCsvFile, append = TRUE, sep = "\n")
+    } 
   }
   print(total)
   print(n)
