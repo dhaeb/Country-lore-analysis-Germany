@@ -47,10 +47,12 @@ createClAnalysisDataset = function(folder,
     triggerCols = triggerObject$triggerCols,
     triggerTimeFilter = triggerObject$triggerTimeFilter,
     triggerExpressionFilter = triggerObject$triggerExpressionFilter,
+    triggerMap = triggerObject$triggerMap,
     triggerAggOperation = triggerAggOperation,
     observationCols = observationObject$observationCols,
     observationTimeFilter = observationObject$observationTimeFilter,
     observationExpression = observationObject$observationExpression,
+    observationMap = observationObject$observationMap,
     observationAggOperation = observationAggOperation,
     joinExpression = joinExpression,
     folderName = folder
@@ -82,16 +84,34 @@ clInputNovFrostJanNass <- createClAnalysisDataset(
   "nov_frost_jan_nass",
   list(
     triggerCols = c("LUFTTEMP_AM_ERDB_MINIMUM"),
-    triggerTimeFilter = "MONTH = 11 and DAY BETWEEN 1 and 10",
+    triggerTimeFilter = "MONTH = 11 and DAY BETWEEN 1 and 10 and LUFTTEMP_AM_ERDB_MINIMUM < 0",
+    triggerMap = function(df){
+      sidColNameYearsUsed <- "yearSID"
+      yearsUsed <- select(df, "STATIONS_ID", "YEAR")
+      yearsUsed <- agg(groupBy(yearsUsed, yearsUsed$STATIONS_ID), COUNT_YEARS_PER_SID = SparkR::countDistinct(yearsUsed$YEAR))
+      yearsUsed <- select(yearsUsed, SparkR::alias(yearsUsed$STATIONS_ID, sidColNameYearsUsed ), yearsUsed$COUNT_YEARS_PER_SID)
+      df <- join(df, yearsUsed, df$STATIONS_ID == yearsUsed[[sidColNameYearsUsed]])
+      df$MEAN_COUNT_ALL_YEARS_PER_SID <- df$LUFTTEMP_AM_ERDB_MINIMUM_AGG_TOTAL_TRIG / df$COUNT_YEARS_PER_SID
+      return(df)
+    },
     triggerExpressionFilter = function(df){
-      return(df$LUFTTEMP_AM_ERDB_MINIMUM_AGG_MONTH_TRIG > 0)
+      return(df$LUFTTEMP_AM_ERDB_MINIMUM_AGG_MONTH_TRIG > df$MEAN_COUNT_ALL_YEARS_PER_SID)
     }
   ),
   list(
     observationCols = c("NIEDERSCHLAGSHOEHE"),
-    observationTimeFilter = "MONTH = 1",
-    observationExpressionFilter = function(df){
-      return(df$NIEDERSCHLAGSHOEHE_AGG_MONTH_OBS > df$NIEDERSCHLAGSHOEHE_AGG_TOTAL_OBS)
+    observationTimeFilter = "MONTH = 1 and NIEDERSCHLAGSHOEHE > 0",
+    observationMap = function(df){
+      sidColNameYearsUsed <- "yearSID"
+      yearsUsed <- select(df, "STATIONS_ID", "YEAR")
+      yearsUsed <- agg(groupBy(yearsUsed, yearsUsed$STATIONS_ID), OBS_COUNT_YEARS_PER_SID = SparkR::countDistinct(yearsUsed$YEAR))
+      yearsUsed <- select(yearsUsed, SparkR::alias(yearsUsed$STATIONS_ID, sidColNameYearsUsed ), yearsUsed$OBS_COUNT_YEARS_PER_SID )
+      df <- join(df, yearsUsed, df$STATIONS_ID == yearsUsed[[sidColNameYearsUsed]])
+      df$OBS_MEAN_COUNT_NIEDERSCHLAGSHOEHE <- df$NIEDERSCHLAGSHOEHE_AGG_TOTAL_OBS / df$OBS_COUNT_YEARS_PER_SID 
+      return(df)
+    },
+    observationExpression = function(df){
+      return(df$NIEDERSCHLAGSHOEHE_AGG_MONTH_OBS > df$OBS_MEAN_COUNT_NIEDERSCHLAGSHOEHE)
     }
   ),
   joinWithNextYear,
@@ -135,7 +155,7 @@ clInputOktoberNassKühl <- list(
     return(df$LUFTTEMPERATUR_MAXIMUM_AGG_MONTH_OBS > df$LUFTTEMPERATUR_MAXIMUM_AGG_TOTAL_OBS)
   },
   observationAggOperation = SparkR::mean,
-  joinExpression = function(triggerTotalDf, observationTotalDf){ cd
+  joinExpression = function(triggerTotalDf, observationTotalDf){
     return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
   },
   folderName = "oktober_nass_kuehl"
@@ -272,18 +292,26 @@ analyseCountryLore <- function(clInput){
   triggerDf <- SparkR::filter(dataDf, clInput$triggerTimeFilter)
   countTotalCleaned <- count(triggerDf)
   
-  
   #     columns aggregation by month (STATIONS_ID, YEAR)
   triggerDfColAggMonth <- aggregateByStatIdAndYear(triggerDf, clInput$triggerCols, "_AGG_MONTH_TRIG", clInput$triggerAggOperation)
   #     trigger columns aggregation by month (STATIONS_ID)
   triggerDfColAggMonth <- aggregateByStatId(triggerDf, clInput$triggerCols, triggerDfColAggMonth, "_AGG_TOTAL_TRIG", clInput$triggerAggOperation)
+  
+  # map trigger df if needed
+  if(!is.null(clInput$triggerMap)){
+    triggerDfColAggMonth <- clInput$triggerMap(triggerDfColAggMonth)
+  }
+ 
   #     just use data, which is related to the country lore
-  triggerTotalDf <- SparkR::filter(triggerDfColAggMonth, clInput$triggerExpression(triggerDfColAggMonth))
+  triggerTotalDf <- SparkR::filter(triggerDfColAggMonth, clInput$triggerExpressionFilter(triggerDfColAggMonth))
   cache(triggerTotalDf)
+  
   countFullfillingTriggeringRule <- count(triggerTotalDf)
-  # print(SparkR::head(triggerDfColAggTotal))
   
-  
+#   print(SparkR::head(triggerTotalDf,100))
+#   readline(prompt="Press [enter] to continue")
+
+
   #   observation columns filter
   if(nchar(clInput$observationTimeFilter) == 0){
     observationDf <- dataDf
@@ -292,28 +320,40 @@ analyseCountryLore <- function(clInput){
   }
   #     columns aggregation by month (STATIONS_ID, YEAR)
   observationDfColAggMonth <- aggregateByStatIdAndYear(observationDf, clInput$observationCols, "_AGG_MONTH_OBS", clInput$observationAggOperation)
-  #     trigger columns aggregation by month (STATIONS_ID)
-  observationTotalDf <- aggregateByStatId(observationDf, clInput$observationCols, observationDfColAggMonth, "_AGG_TOTAL_OBS", clInput$observationAggOperation)
-  cache(observationTotalDf)
+  
+  #     observation columns aggregation by month (STATIONS_ID)
+  observationDfColAggMonth <- aggregateByStatId(observationDf, clInput$observationCols, observationDfColAggMonth, "_AGG_TOTAL_OBS", clInput$observationAggOperation)
+  
+  # map observation df if needed
+  if(!is.null(clInput$observationMap)){
+    observationDfColAggMonth <- clInput$observationMap(observationDfColAggMonth)
+  }
+  
+
   
   # extract other columns using functional programming
   otherColumns <- Map(function(e){ 
-      observationTotalDf[[e]]
+      observationDfColAggMonth[[e]]
     }, Filter(function(e){
           e != "STATIONS_ID" & e != "YEAR"
-       }, names(observationTotalDf)))
-  # rename STATION_ID and YEAR of observationTotalDf
-  observationTotalDf <- do.call("select", append(list(observationTotalDf, SparkR::alias(observationTotalDf$STATIONS_ID, "SID"), SparkR::alias(observationTotalDf$YEAR, "Y")), otherColumns))
-
-  #   print(countTotalCleaned)
-  #   print(countFullfillingTriggeringRule)
+       }, names(observationDfColAggMonth)))
+  # rename STATION_ID and YEAR of observationDfColAggMonth
+  observationTotalDf <- do.call("select", append(list(observationDfColAggMonth, SparkR::alias(observationDfColAggMonth$STATIONS_ID, "SID"), SparkR::alias(observationDfColAggMonth$YEAR, "Y")), otherColumns))
+  cache(observationTotalDf)
+#   print(SparkR::head(observationTotalDf,100))
+#   readline(prompt="Press [enter] to continue")  
+  
     
   # join into final data frame to count the results
   countablePreresult <- join(triggerTotalDf, observationTotalDf, clInput$joinExpression(triggerTotalDf, observationTotalDf))
   cache(countablePreresult)
+  # count all
   countAllYearsPerStationFullfillingTrigger <- agg(groupBy(countablePreresult, countablePreresult$STATIONS_ID), countAll = count(countablePreresult$YEAR))
-  countablePreresultFullfillingObservation <- SparkR::filter(countablePreresult, clInput$observationExpression(countablePreresult))
-  countAllYearsPerStationFullfillingObservation <- agg(groupBy(countablePreresultFullfillingObservation, countablePreresult$SID), cFullfilling = count(countablePreresult$Y))
+  # count fullfilling rule
+  oberservationPreFilteredCountable <- SparkR::filter(countablePreresult, clInput$observationExpression(countablePreresult))
+  countAllYearsPerStationFullfillingObservation <- agg(groupBy(oberservationPreFilteredCountable , oberservationPreFilteredCountable $SID), cFullfilling = count(oberservationPreFilteredCountable $Y))
+  
+  # the final join
   totalResult <- join(countAllYearsPerStationFullfillingTrigger, countAllYearsPerStationFullfillingObservation, countAllYearsPerStationFullfillingTrigger$STATIONS_ID == countAllYearsPerStationFullfillingObservation$SID)  
   # calc relation
   totalResult$rel <- totalResult$cFullfilling / totalResult$countAll
