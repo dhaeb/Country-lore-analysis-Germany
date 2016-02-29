@@ -376,17 +376,31 @@ analyseCountryLore <- function(clInput){
     } else {
       df <- SparkR::filter(totalResult, createria)  
     }
-    return(sparkRSum(df, df$cFullfilling) / sparkRSum(df, df$countAll))
+    percentageFullfillingRule <- sparkRSum(df, df$cFullfilling) / sparkRSum(df, df$countAll)
+    return(percentageFullfillingRule)
   }
+  folderPrefix <- "intermeditate_results/"
   
   total <- aggregateResults()
   n <- aggregateResults(totalResult$Lage == "N")
   o <- aggregateResults(totalResult$Lage == "O")
   s <- aggregateResults(totalResult$Lage == "S")
   w <- aggregateResults(totalResult$Lage == "W")
+  txtFileName <- paste(folderPrefix, clInput$folderName, ".txt", sep = "")
+  write(c(total, n, o, s, w), file = txtFileName,
+      ncolumns = 1,
+      append = FALSE, sep = " ")
+      
   exportCsv <- select(totalResult, totalResult$countAll, totalResult$cFullfilling, totalResult$rel, totalResult$longitude, totalResult$latitude, totalResult$Stationsname, totalResult$Bundesland, totalResult$Lage, totalResult$Statationshoehe, totalResult$von_datum, totalResult$bis_datum)
   exportCsv <- orderBy(exportCsv, exportCsv$rel)
-  write.df(exportCsv, clInput$folderName, "com.databricks.spark.csv", "overwrite")
+  pathToResultSplits <- paste(folderPrefix, clInput$folderName, sep = "")
+  write.df(exportCsv, pathToResultSplits, "com.databricks.spark.csv", "overwrite")
+  file_list <- list.files(path = pathToResultSplits, pattern = "part-\\d{5}")
+  outputCsvFile <- file(paste(pathToResultSplits, "/", clInput$folderName, ".csv", sep = ""), 'w')
+  for(filename in file_list){
+    fhandle <- file(paste(pathToResultSplits, "/", filename, sep=""), 'r')
+    cat(readLines(fhandle), file = outputCsvFile, append = TRUE, sep = "\n")
+  }
   print(total)
   print(n)
   print(o)
@@ -394,4 +408,3 @@ analyseCountryLore <- function(clInput){
   print(w)
   return(totalResult)
 }
-
