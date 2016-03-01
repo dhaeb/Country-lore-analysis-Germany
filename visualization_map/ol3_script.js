@@ -42,11 +42,11 @@ function createPopover(feature){
 	+ "</table>";
 };
 
-var normalStyle = new ol.style.Style({
+var megentaStyle = new ol.style.Style({
 	image: new ol.style.Circle({
                 radius: 3,
                 fill: new ol.style.Fill({
-                    color: 'red'
+                    color: 'magenta'
                 })
             })	
 });
@@ -73,14 +73,15 @@ var iconStyle = new ol.style.Style({
     })
 });
 
-function createPointStyle(color, radius){
+function createPointStyle(color, radius, theStroke){
   return new ol.style.Style({
 	name : "default",
 	image: new ol.style.Circle({
 	    radius: radius,
 	    fill: new ol.style.Fill({
 		color: color
-	    })
+	    }),
+	    stroke: theStroke 
 	})
   });
 };
@@ -220,14 +221,31 @@ var run = function(geojsonObject) {
     
     // create stylefunction for the feature points
     
+    function calcColorAndRad(feature, opacity){
+       if(typeof opacity == 'undefined'){
+	 opacity = 1; 
+       }
+       var maxCountDatasets = dynamicSliderRanges.getMaxOf(sliderCount);
+       var rad = feature.get("cAll") * 10 / maxCountDatasets + defaultRad; // the main radius of a station marker can switch from ~defaultRad and 10 + defaultRad
+       var percentTrueCl = feature.get('rel');
+       var color = toColorScale(percentTrueCl); // choose color from green to red
+       color.push(opacity); // add the fourth member to the array representing the opacity
+       return {"color" : color, "rad" : rad};
+    }
+    
     var defaultRad = Math.abs(2 + 200 / countDatasets); //calculate less size if there are many stations to be shown
+    var strokedStyleFunction = function (feature, resolution) {
+	var styleData = calcColorAndRad(feature);
+	return [createPointStyle(styleData.color, styleData.rad, new ol.style.Stroke({
+	  color: 'black',
+	  width: 1
+	}))];
+
+    };
+    
     var styleFunction = function (feature, resolution) {
-        var maxCountDatasets = dynamicSliderRanges.getMaxOf(sliderCount);
-	var rad = feature.get("cAll") * 10 / maxCountDatasets + defaultRad; // the main radius of a station marker can switch from ~defaultRad and 10 + defaultRad
-	var percentTrueCl = feature.get('rel');
-	var color = toColorScale(percentTrueCl); // choose color from green to red 
-	color.push(1); // add the fourth member to the array representing the opacity
-	return [createPointStyle(color, rad)];
+	var styleData = calcColorAndRad(feature);
+	return [createPointStyle(styleData.color, styleData.rad)];
     };
     
     /**
@@ -271,6 +289,28 @@ var run = function(geojsonObject) {
 	    popup.setPosition(coordinate);
 	    content.innerHTML = createPopover(feature);
       } 
+    });
+    
+    // highlight hovered feature
+    var currentFeature;
+    map.on('pointermove', function(evt) {
+      evt.preventDefault
+      var feature = map.forEachFeatureAtPixel(evt.pixel,
+          function(feature, layer) {
+	    return feature;
+          });
+      if (feature) {
+	  if(currentFeature){
+	      currentFeature.setStyle(styleFunction(feature));
+	  } 
+	  currentFeature = feature;
+	  feature.setStyle(strokedStyleFunction(feature));  
+      } else {
+	if(currentFeature){
+	    currentFeature.setStyle(styleFunction(currentFeature));
+	    currentFeature = undefined;
+	}
+      }
     });
         
      $.each(filters, function(i, id){
