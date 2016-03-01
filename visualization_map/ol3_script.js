@@ -345,8 +345,11 @@ var run = function(geojsonObject) {
 			      } 
 			      return result;
 	                };
-		        checkFor(e.B.Hoehe, sliderHeight, ltCompareFloats) || checkFor(e.B.cAll, sliderCount, ltCompareFloats) || checkFor(e.B.von, sliderLowerDate, function(a,b){return a < new Date(parseInt(b), 0, 1);}) || checkFor(e.B.bis, sliderHigherDate, function(a,b){return a > new Date(parseInt(b), 0, 1);}) 
-			|| checkFor(e.B.rel, sliderOutcome, function(a,b){
+		        checkFor(e.B.Hoehe, sliderHeight, ltCompareFloats) || 
+		        checkFor(e.B.cAll, sliderCount, ltCompareFloats) || 
+		        checkFor(e.B.von, sliderLowerDate, function(a,b){return a < new Date(parseInt(b), 0, 1);}) || 
+		        checkFor(e.B.bis, sliderHigherDate, function(a,b){return a > new Date(parseInt(b), 0, 1);}) || 
+		        checkFor(e.B.rel, sliderOutcome, function(a,b){
 			  return !(e.B.rel > b.from && e.B.rel < b.to);
 			});
 
