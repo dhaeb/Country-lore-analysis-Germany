@@ -29,6 +29,10 @@ joinWithNextYear <- function(triggerTotalDf, observationTotalDf){
   return(triggerTotalDf$STATIONS_ID == observationTotalDf$SID & triggerTotalDf$YEAR == (observationTotalDf$Y - 1))
 }
 
+identity <- function(x) {
+  return(x)
+}
+
 # helper function to create the input data set for an clr analysis
 createClAnalysisDataset = function(folder, 
 				   triggerObject,
@@ -351,7 +355,8 @@ analyseCountryLore <- function(clInput){
   countAllYearsPerStationFullfillingTrigger <- agg(groupBy(countablePreresult, countablePreresult$STATIONS_ID), countAll = count(countablePreresult$YEAR))
   # count fullfilling rule
   oberservationPreFilteredCountable <- SparkR::filter(countablePreresult, clInput$observationExpression(countablePreresult))
-  countAllYearsPerStationFullfillingObservation <- agg(groupBy(oberservationPreFilteredCountable , oberservationPreFilteredCountable $SID), cFullfilling = count(oberservationPreFilteredCountable $Y))
+  countAllYearsPerStationFullfillingObservation <- agg(groupBy(oberservationPreFilteredCountable , oberservationPreFilteredCountable $SID), cFullfilling = count(oberservationPreFilteredCountable$Y))
+  countAllYearsPerStationFullfillingObservation$cFullfillingQuad <- countAllYearsPerStationFullfillingObservation$cFullfilling * countAllYearsPerStationFullfillingObservation$cFullfilling
   
   # the final join
   totalResult <- join(countAllYearsPerStationFullfillingTrigger, countAllYearsPerStationFullfillingObservation, countAllYearsPerStationFullfillingTrigger$STATIONS_ID == countAllYearsPerStationFullfillingObservation$SID)  
@@ -381,16 +386,40 @@ analyseCountryLore <- function(clInput){
   }
   folderPrefix <- "intermeditate_results/"
   
-  total <- aggregateResults()
-  n <- aggregateResults(totalResult$Lage == "N")
-  o <- aggregateResults(totalResult$Lage == "O")
-  s <- aggregateResults(totalResult$Lage == "S")
-  w <- aggregateResults(totalResult$Lage == "W")
+  
+  addDataPair <- function(a,b){
+    c(a, b)
+  }
+  filterForBundesland <- function(bl){
+    addDataPair(bl,aggregateResults(totalResult$Bundesland == bl))
+  }
+  generalDataDf <- data.frame(
+    addDataPair('total', aggregateResults()),
+    addDataPair('N', aggregateResults(totalResult$Lage == "N")),
+    addDataPair('O', aggregateResults(totalResult$Lage == "O")),
+    addDataPair('S', aggregateResults(totalResult$Lage == "S")),
+    addDataPair('W', aggregateResults(totalResult$Lage == "W")),
+    filterForBundesland("Baden-Württemberg"),
+    filterForBundesland("Bayern"),
+    filterForBundesland("Berlin"),
+    filterForBundesland("Brandenburg"),
+    filterForBundesland("Bremen"),
+    filterForBundesland("Hamburg"),
+    filterForBundesland("Hessen"),
+    filterForBundesland("Mecklenburg-Vorpommern"),
+    filterForBundesland("Niedersachsen"),
+    filterForBundesland("Nordrhein-Westfalen"),
+    filterForBundesland("Rheinland-Pfalz"),
+    filterForBundesland("Saarland"),
+    filterForBundesland("Sachsen"),
+    filterForBundesland("Sachsen-Anhalt"),
+    filterForBundesland("Schleswig-Holstein"),
+    filterForBundesland("Thüringen")
+  )
   txtFileName <- paste(folderPrefix, clInput$folderName, ".txt", sep = "")
-  write(c(total, n, o, s, w), file = txtFileName,
-      ncolumns = 1,
-      append = FALSE, sep = " ")
-      
+  print(head(generalDataDf))
+  write.csv(x = t(generalDataDf), file = txtFileName, col.names= c("agg_area", "value"), row.names = FALSE) 
+  readline("press!")
   exportCsv <- select(totalResult, totalResult$countAll, totalResult$cFullfilling, totalResult$rel, totalResult$longitude, totalResult$latitude, totalResult$Stationsname, totalResult$Bundesland, totalResult$Lage, totalResult$Statationshoehe, totalResult$von_datum, totalResult$bis_datum)
   exportCsv <- orderBy(exportCsv, exportCsv$rel)
   pathToResultSplits <- paste(folderPrefix, clInput$folderName, sep = "")
@@ -405,10 +434,6 @@ analyseCountryLore <- function(clInput){
       cat(readLines(fhandle), file = outputCsvFile, append = TRUE, sep = "\n")
     } 
   }
-  print(total)
-  print(n)
-  print(o)
-  print(s)
-  print(w)
+  
   return(totalResult)
 }
