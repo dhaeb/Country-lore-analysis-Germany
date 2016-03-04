@@ -293,20 +293,34 @@ var run = function(geojsonObject) {
     
     // highlight hovered feature
     var currentFeature;
+    var hoverMapDiv = $("#hoverMapDiv");
+    
     map.on('pointermove', function(evt) {
       evt.preventDefault
       var feature = map.forEachFeatureAtPixel(evt.pixel,
           function(feature, layer) {
 	    return feature;
           });
-      if (feature) {
-	  if(currentFeature){
-	      currentFeature.setStyle(styleFunction(feature));
-	  } 
-	  currentFeature = feature;
-	  feature.setStyle(strokedStyleFunction(feature));  
-      } else {
+      if (feature) { // there is a new feature hovered
+	  if(currentFeature){  // there is a previous feature hovered
+	      if(currentFeature !== feature){ // the new and the old feature are not the same
+		currentFeature.setStyle(styleFunction(currentFeature));
+		feature.setStyle(strokedStyleFunction(feature));
+		hoverMapDiv.text(feature.get('Ort'));
+		currentFeature = feature;
+	      }
+	  } else {
+	      hoverMapDiv.css('left', String(parseInt(evt.originalEvent.clientX) + 15) + "px");
+	      hoverMapDiv.css('top', String(parseInt(evt.originalEvent.clientY) - 15) + "px");
+	      hoverMapDiv.toggle();
+	      currentFeature = feature;
+	      feature.setStyle(strokedStyleFunction(feature));
+	      hoverMapDiv.text(feature.get('Ort'));
+	  }
+	  
+      } else { // no feature is hovered
 	if(currentFeature){
+	    hoverMapDiv.toggle();
 	    currentFeature.setStyle(styleFunction(currentFeature));
 	    currentFeature = undefined;
 	}
