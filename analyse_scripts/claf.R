@@ -356,7 +356,6 @@ analyseCountryLore <- function(clInput){
   # count fullfilling rule
   oberservationPreFilteredCountable <- SparkR::filter(countablePreresult, clInput$observationExpression(countablePreresult))
   countAllYearsPerStationFullfillingObservation <- agg(groupBy(oberservationPreFilteredCountable , oberservationPreFilteredCountable $SID), cFullfilling = count(oberservationPreFilteredCountable$Y))
-  countAllYearsPerStationFullfillingObservation$cFullfillingQuad <- countAllYearsPerStationFullfillingObservation$cFullfilling * countAllYearsPerStationFullfillingObservation$cFullfilling
   
   # the final join
   totalResult <- join(countAllYearsPerStationFullfillingTrigger, countAllYearsPerStationFullfillingObservation, countAllYearsPerStationFullfillingTrigger$STATIONS_ID == countAllYearsPerStationFullfillingObservation$SID)  
@@ -368,37 +367,36 @@ analyseCountryLore <- function(clInput){
   totalResult <- join(totalResult, metaDf, totalResult$SID == metaDf$STATIONS_ID)
   cache(totalResult)
   
-  
-  sparkRSum <- function(df, col){
-    r <- collect(agg(groupBy(df), result = sum(col)))
-    return(r[[1]])
-  }
+  totalResultR <- SparkR::collect(totalResult)
   
   # function calculating aggregated results
   aggregateResults <- function(createria){
     if(missing(createria)){
-      df <- totalResult      
+      df <- totalResultR      
     } else {
-      df <- SparkR::filter(totalResult, createria)  
+      df <- totalResultR[createria,]
     }
-    percentageFullfillingRule <- sparkRSum(df, df$cFullfilling) / sparkRSum(df, df$countAll)
-    return(percentageFullfillingRule)
+    countAll <- sum(df$countAll)
+    countFullfilling <- sum(df$cFullfilling)
+    percentageFullfillingRule <- countFullfilling / countAll
+    return(c(percentageFullfillingRule, countAll, countFullfilling))
   }
   folderPrefix <- "intermeditate_results/"
   
   
-  addDataPair <- function(a,b){
-    c(a, b)
+  addDataPair <- function(a,complex){
+    append(c(a), complex)
   }
+  
   filterForBundesland <- function(bl){
-    addDataPair(bl,aggregateResults(totalResult$Bundesland == bl))
+    addDataPair(bl, aggregateResults(totalResultR$Bundesland == bl))
   }
   generalDataDf <- data.frame(
     addDataPair('total', aggregateResults()),
-    addDataPair('N', aggregateResults(totalResult$Lage == "N")),
-    addDataPair('O', aggregateResults(totalResult$Lage == "O")),
-    addDataPair('S', aggregateResults(totalResult$Lage == "S")),
-    addDataPair('W', aggregateResults(totalResult$Lage == "W")),
+    addDataPair('N', aggregateResults(totalResultR$Lage == "N")),
+    addDataPair('O', aggregateResults(totalResultR$Lage == "O")),
+    addDataPair('S', aggregateResults(totalResultR$Lage == "S")),
+    addDataPair('W', aggregateResults(totalResultR$Lage == "W")),
     filterForBundesland("Baden-Württemberg"),
     filterForBundesland("Bayern"),
     filterForBundesland("Berlin"),
@@ -417,9 +415,7 @@ analyseCountryLore <- function(clInput){
     filterForBundesland("Thüringen")
   )
   txtFileName <- paste(folderPrefix, clInput$folderName, ".txt", sep = "")
-  print(head(generalDataDf))
   write.csv(x = t(generalDataDf), file = txtFileName, col.names= c("agg_area", "value"), row.names = FALSE) 
-  readline("press!")
   exportCsv <- select(totalResult, totalResult$countAll, totalResult$cFullfilling, totalResult$rel, totalResult$longitude, totalResult$latitude, totalResult$Stationsname, totalResult$Bundesland, totalResult$Lage, totalResult$Statationshoehe, totalResult$von_datum, totalResult$bis_datum)
   exportCsv <- orderBy(exportCsv, exportCsv$rel)
   pathToResultSplits <- paste(folderPrefix, clInput$folderName, sep = "")
