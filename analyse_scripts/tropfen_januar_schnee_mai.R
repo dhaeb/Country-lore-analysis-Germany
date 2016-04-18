@@ -1,9 +1,10 @@
 # So viele Tropfen im Januar, so viel Schnee im Mai
 # parameter2: regen - NIEDERSCHLAGSHOEHE (Januar)
 # parameter3: schnee - SCHNEEHOEHE (Mai)
+setwd("/Users/martinmac/Country-lore-analysis-Germany/")
 
 inDf2 <- read.df(sqlContext,
-                 path = "/Users/martinmac/Big_Data_Prak_Lani/data/kl/kl_total.csv",
+                 path = "data/kl_total.csv",
                  source = "com.databricks.spark.csv",
                  schema = klSchema,
                  header="true", delimiter = ";")
@@ -77,3 +78,6 @@ SparkR::head(joinedDfjm_final)
 # save joinedDfjm for plotting
 SparkR::write.df(joinedDfjm_final, "tropfen_januar_schnee_mai", "com.databricks.spark.csv", "overwrite")
 
+output <- SparkR:::collect(joinedDfjm_final)
+outfile = "Outputs/intermediateCSV/tropfen_januar_schnee_mai.csv"
+write.csv(output,outfile,row.names=FALSE)

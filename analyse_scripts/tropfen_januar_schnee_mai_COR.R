@@ -5,7 +5,7 @@ source("analyse_scripts/COR_FUNCTION.R")
 
 csvDfT <-
     read.csv(
-        "Outputs/not_used_or_broken/tropfen_januar_schnee_mai.csv", header = FALSE, sep = ",",
+        "Outputs/intermediateCSV/tropfen_januar_schnee_mai.csv", header = FALSE, sep = ",",
         col.names = c(
             "SID", "YEAR", "allMeanREGENj", "allMeanSCHNEEj","allMeanREGENm", "allMeanSCHNEEm"
         )
