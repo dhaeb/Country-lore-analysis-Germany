@@ -4,6 +4,7 @@
 # parameter3: temp - LUFTTEMPERATUR (26.06 - 28.06 vs 29.06 - 17.08)
 
 # a case:= specific station in specific year
+setwd("/Users/martinmac/Country-lore-analysis-Germany/")
 
 klSchema <- structType(
     structField("STATIONS_ID", "integer"),
@@ -27,7 +28,7 @@ klSchema <- structType(
 
 # import data
 inDf1 <- read.df(sqlContext,
-                 path = "/Users/martinmac/Big_Data_Prak_Lani/data/kl/kl_total.csv",
+                 path = "data/kl_total.csv",
                  source = "com.databricks.spark.csv",
                  schema = klSchema,
                  header="true", delimiter = ";")
@@ -160,5 +161,5 @@ joinedDf_final <- select(joinedDf2,"SID", "YEAR", "allMeanSONNE", "allMeanREGEN"
 write.df(joinedDf_final, "siebenschlaefertag2z", "com.databricks.spark.csv", "overwrite")
 
 output <- SparkR:::collect(joinedDf_final)
-outfile = "sieben2z.csv"
+outfile = "Outputs/intermediateCSV/sieben2z.csv"
 write.csv(output,outfile,row.names=FALSE)

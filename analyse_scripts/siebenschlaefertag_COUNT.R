@@ -1,5 +1,4 @@
 setwd("/Users/martinmac/Country-lore-analysis-Germany/")
-
 source("analyse_scripts/siebenschlaefertag_COR.R")
 
 options(digits = 8)

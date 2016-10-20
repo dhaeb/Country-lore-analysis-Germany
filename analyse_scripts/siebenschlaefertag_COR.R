@@ -3,7 +3,7 @@ library(dplyr)
 library(plyr)
 
 setwd("/Users/martinmac/Country-lore-analysis-Germany/")
-sieben <- read.csv("Outputs/not_used_or_broken/sieben2z.csv")
+sieben <- read.csv("Outputs/intermediateCSV/sieben2z.csv")
 
 df <- ddply(sieben,.(SID),transform, yearCount = length(YEAR))
 
@@ -62,7 +62,7 @@ corS30s2 <- corS30 %>% arrange(-corSONNE30z2)
 
 stationDf_csv <-
     read.csv(
-        "Outputs/not_used_or_broken/stationDf.csv", header = FALSE, sep = ",",
+        "data/stationDf.csv", header = FALSE, sep = ",",
         col.names = c(
             "STATIONS_ID", "von_datum", "bis_datum", "Statationshoehe", "longitude", "latitude", "Stationsname","Bundesland", "Lage"
         )
